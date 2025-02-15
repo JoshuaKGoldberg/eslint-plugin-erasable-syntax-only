@@ -31,7 +31,7 @@ importers:
         specifier: 22.13.4
         version: 22.13.4
       '@typescript-eslint/rule-tester':
-        specifier: ^8.24.0
+        specifier: 8.24.0
         version: 8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)
       '@vitest/coverage-v8':
         specifier: 3.0.5
@@ -49,7 +49,7 @@ importers:
         specifier: 9.20.1
         version: 9.20.1(jiti@2.4.2)
       eslint-doc-generator:
-        specifier: ^2.0.2
+        specifier: 2.0.2
         version: 2.0.2(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)
       eslint-plugin-jsdoc:
         specifier: 50.6.3
@@ -91,7 +91,7 @@ importers:
         specifier: 0.44.0
         version: 0.44.0
       prettier:
-        specifier: ^3.5.1
+        specifier: 3.5.1
         version: 3.5.1
       prettier-plugin-curly:
         specifier: 0.3.1
