@@ -12,6 +12,12 @@ ruleTester.run("import-aliases", rule, {
 					endLine: 1,
 					line: 1,
 					messageId: "importAlias",
+					suggestions: [
+						{
+							messageId: "importAliasFix",
+							output: `import values from "values";`,
+						},
+					],
 				},
 			],
 		},

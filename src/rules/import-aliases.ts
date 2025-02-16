@@ -9,9 +9,24 @@ export const rule = createRule({
 				if (
 					node.moduleReference.type === AST_NODE_TYPES.TSExternalModuleReference
 				) {
+					const importName = node.id.name;
+					const importModule = node.moduleReference.expression.value;
+
 					context.report({
 						messageId: "importAlias",
 						node,
+						suggest: [
+							{
+								data: { module: importModule, name: importName },
+								fix(fixer) {
+									return fixer.replaceText(
+										node,
+										`import ${importName} from "${importModule}";`,
+									);
+								},
+								messageId: "importAliasFix",
+							},
+						],
 					});
 				}
 			},
@@ -22,9 +37,12 @@ export const rule = createRule({
 		docs: {
 			description: "Avoid using TypeScript's import aliases.",
 		},
+		fixable: "code",
+		hasSuggestions: true,
 		messages: {
 			importAlias:
 				"This import alias will not be allowed under TypeScript's --erasableSyntaxOnly.",
+			importAliasFix: "Use `import {{name}} from '{{module}}'` instead.",
 		},
 		schema: [],
 		type: "problem",
