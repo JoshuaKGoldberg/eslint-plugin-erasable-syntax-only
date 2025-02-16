@@ -7,6 +7,17 @@ export const rule = createRule({
 				context.report({
 					messageId: "parameterProperty",
 					node,
+					suggest: [
+						{
+							fix(fixer) {
+								return fixer.removeRange([
+									node.range[0],
+									node.parameter.range[0],
+								]);
+							},
+							messageId: "parameterPropertyFix",
+						},
+					],
 				});
 			},
 		};
@@ -16,9 +27,12 @@ export const rule = createRule({
 		docs: {
 			description: "Avoid using TypeScript's class parameter properties.",
 		},
+		fixable: "code",
+		hasSuggestions: true,
 		messages: {
 			parameterProperty:
 				"This parameter property will not be allowed under TypeScript's --erasableSyntaxOnly.",
+			parameterPropertyFix: "Remove parameter properties",
 		},
 		schema: [],
 		type: "problem",

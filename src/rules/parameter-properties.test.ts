@@ -18,6 +18,18 @@ ruleTester.run("parameter-properties", rule, {
 					endLine: 4,
 					line: 4,
 					messageId: "parameterProperty",
+					suggestions: [
+						{
+							messageId: "parameterPropertyFix",
+							output: `
+				class Values {
+					constructor(
+						value: number,
+					) {}
+				}
+			`,
+						},
+					],
 				},
 			],
 		},
@@ -36,6 +48,18 @@ ruleTester.run("parameter-properties", rule, {
 					endLine: 4,
 					line: 4,
 					messageId: "parameterProperty",
+					suggestions: [
+						{
+							messageId: "parameterPropertyFix",
+							output: `
+				class Values {
+					constructor(
+						value: number,
+					) {}
+				}
+			`,
+						},
+					],
 				},
 			],
 		},
