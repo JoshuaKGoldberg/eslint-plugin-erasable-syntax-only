@@ -27,7 +27,6 @@ export const rule = createRule({
 		docs: {
 			description: "Avoid using TypeScript's class parameter properties.",
 		},
-		fixable: "code",
 		hasSuggestions: true,
 		messages: {
 			parameterProperty:
