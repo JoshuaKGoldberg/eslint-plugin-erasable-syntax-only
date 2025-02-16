@@ -1,5 +1,7 @@
 # erasable-syntax-only/import-aliases
 
+💡 This rule is manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).
+
 <!-- end auto-generated rule header -->
 
 Enforces that code doesn't use TypeScript's `import ... =`s:

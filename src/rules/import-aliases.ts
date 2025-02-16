@@ -37,7 +37,6 @@ export const rule = createRule({
 		docs: {
 			description: "Avoid using TypeScript's import aliases.",
 		},
-		fixable: "code",
 		hasSuggestions: true,
 		messages: {
 			importAlias:
