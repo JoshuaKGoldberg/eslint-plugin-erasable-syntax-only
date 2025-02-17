@@ -26,6 +26,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jakebailey",
+      "name": "Jake Bailey",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5341706?v=4",
+      "profile": "https://jakebailey.dev",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
