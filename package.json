@@ -37,7 +37,8 @@
 		"*": "prettier --ignore-unknown --write"
 	},
 	"dependencies": {
-		"@typescript-eslint/utils": "^8.24.0"
+		"@typescript-eslint/utils": "^8.24.0",
+		"cached-factory": "^0.1.0"
 	},
 	"devDependencies": {
 		"@eslint-community/eslint-plugin-eslint-comments": "4.4.1",
