@@ -17,3 +17,7 @@ import values = require("values");
 ```ts
 import values from "values";
 ```
+
+```ts
+import * as values from "values";
+```

@@ -17,14 +17,22 @@ export const rule = createRule({
 						node,
 						suggest: [
 							{
-								data: { module: importModule, name: importName },
 								fix(fixer) {
 									return fixer.replaceText(
 										node,
 										`import ${importName} from "${importModule}";`,
 									);
 								},
-								messageId: "importAliasFix",
+								messageId: "importAliasDefaultFix",
+							},
+							{
+								fix(fixer) {
+									return fixer.replaceText(
+										node,
+										`import * as ${importName} from "${importModule}";`,
+									);
+								},
+								messageId: "importAliasNamespaceFix",
 							},
 						],
 					});
@@ -41,7 +49,8 @@ export const rule = createRule({
 		messages: {
 			importAlias:
 				"This import alias will not be allowed under TypeScript's --erasableSyntaxOnly.",
-			importAliasFix: "Use `import {{name}} from '{{module}}'` instead.",
+			importAliasDefaultFix: "Switch to default import.",
+			importAliasNamespaceFix: "Switch to namespace import.",
 		},
 		schema: [],
 		type: "problem",

@@ -14,8 +14,12 @@ ruleTester.run("import-aliases", rule, {
 					messageId: "importAlias",
 					suggestions: [
 						{
-							messageId: "importAliasFix",
+							messageId: "importAliasDefaultFix",
 							output: `import values from "values";`,
+						},
+						{
+							messageId: "importAliasNamespaceFix",
+							output: `import * as values from "values";`,
 						},
 					],
 				},
