@@ -24,11 +24,11 @@ ruleTester.run("parameter-properties", rule, {
 							output: `
 				class Values {
 					private value: number;
-					constructor(
+constructor(
 						value: number,
 					) {
-						this.value = value;
-					}
+this.value = value;
+}
 				}
 			`,
 						},
@@ -57,11 +57,11 @@ ruleTester.run("parameter-properties", rule, {
 							output: `
 				class A {
 					readonly value: number;
-					constructor(
+constructor(
 						value: number,
 					) {
-						this.value = value;
-					}
+this.value = value;
+}
 				}
 			`,
 						},
@@ -89,7 +89,7 @@ ruleTester.run("parameter-properties", rule, {
 							output: `
 				class Values {
 					readonly value: number;
-					protected foo: number;
+protected foo: number;
 					constructor(
 						value: number,
 					) {
@@ -119,11 +119,11 @@ ruleTester.run("parameter-properties", rule, {
 							output: `
 				const Values = class {
 					private value: number;
-					constructor(
+constructor(
 						value: number
 					) {
-						this.value = value;
-					}
+this.value = value;
+}
 				}
 			`,
 						},
@@ -150,11 +150,11 @@ ruleTester.run("parameter-properties", rule, {
 							output: `
 				class Values {
 					readonly value: number;
-					constructor(
+constructor(
 						value: number
 					) {
 						this.value = value;
-						this.foo = 1;
+this.foo = 1;
 					}
 				}
 			`,
@@ -180,11 +180,11 @@ ruleTester.run("parameter-properties", rule, {
 							output: `
 				class Values {
 					private value: number;
-					constructor(
+constructor(
 						value: number = 3
 					) {
-						this.value = value;
-					}
+this.value = value;
+}
 				}
 			`,
 						},

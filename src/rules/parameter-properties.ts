@@ -60,11 +60,6 @@ export const rule = createRule({
 						node.expression.left.property.name === paramName,
 				);
 
-				const baseIndent = context.sourceCode.lines[
-					classBody.body[0].loc.start.line - 1
-				].slice(0, classBody.body[0].loc.start.column);
-				const bodyIndent = `${baseIndent}${baseIndent.includes("\t") ? "\t" : "  "}`;
-
 				context.report({
 					messageId: "parameterProperty",
 					node,
@@ -76,7 +71,7 @@ export const rule = createRule({
 								fixes.push(
 									fixer.insertTextBefore(
 										classBody.body[0],
-										`${fieldDeclaration}\n${baseIndent}`,
+										`${fieldDeclaration}\n`,
 									),
 								);
 
@@ -92,14 +87,14 @@ export const rule = createRule({
 										fixes.push(
 											fixer.replaceText(
 												constructor.body,
-												`{\n${bodyIndent}${assignmentStatement}\n${baseIndent}}`,
+												`{\n${assignmentStatement}\n}`,
 											),
 										);
 									} else {
 										fixes.push(
 											fixer.insertTextBefore(
 												constructor.body.body[0],
-												`${assignmentStatement}\n${bodyIndent}`,
+												`${assignmentStatement}\n`,
 											),
 										);
 									}
