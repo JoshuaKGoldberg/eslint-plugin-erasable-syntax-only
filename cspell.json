@@ -10,11 +10,11 @@
 		"pnpm-lock.yaml"
 	],
 	"words": [
+		"TSESTree",
 		"apexskier",
 		"automerge",
 		"joshuakgoldberg",
 		"markdownlintignore",
-		"tseslint",
-		"TSESTree"
+		"tseslint"
 	]
 }

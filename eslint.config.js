@@ -1,12 +1,11 @@
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import eslint from "@eslint/js";
 import vitest from "@vitest/eslint-plugin";
-import eslintPlugin from "eslint-plugin-eslint-plugin";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
 import markdown from "eslint-plugin-markdown";
 import n from "eslint-plugin-n";
-import packageJson from "eslint-plugin-package-json/configs/recommended";
+import packageJson from "eslint-plugin-package-json";
 import perfectionist from "eslint-plugin-perfectionist";
 import * as regexp from "eslint-plugin-regexp";
 import yml from "eslint-plugin-yml";
@@ -14,19 +13,10 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
 	{
-		ignores: [
-			"**/*.snap",
-			"coverage",
-			"lib",
-			"node_modules",
-			"pnpm-lock.yaml",
-			"docs/rules/*/*.ts",
-			".*rc.*",
-		],
+		ignores: ["**/*.snap", "coverage", "lib", "node_modules", "pnpm-lock.yaml"],
 	},
 	{ linterOptions: { reportUnusedDisableDirectives: "error" } },
 	eslint.configs.recommended,
-	eslintPlugin.configs["flat/recommended"],
 	comments.recommended,
 	jsdoc.configs["flat/contents-typescript-error"],
 	jsdoc.configs["flat/logical-typescript-error"],
@@ -34,7 +24,7 @@ export default tseslint.config(
 	jsonc.configs["flat/recommended-with-json"],
 	markdown.configs.recommended,
 	n.configs["flat/recommended"],
-	packageJson,
+	packageJson.configs.recommended,
 	perfectionist.configs["recommended-natural"],
 	regexp.configs["flat/recommended"],
 	{
@@ -50,6 +40,8 @@ export default tseslint.config(
 			},
 		},
 		rules: {
+			"n/no-unpublished-import": "off",
+
 			// Stylistic concerns that don't interfere with Prettier
 			"logical-assignment-operators": [
 				"error",
@@ -60,18 +52,15 @@ export default tseslint.config(
 			"object-shorthand": "error",
 			"operator-assignment": "error",
 		},
-		settings: { perfectionist: { partitionByComment: true, type: "natural" } },
+		settings: {
+			perfectionist: { partitionByComment: true, type: "natural" },
+			vitest: { typecheck: true },
+		},
 	},
 	{
 		extends: [tseslint.configs.disableTypeChecked],
 		files: ["**/*.md/*.ts"],
-		rules: {
-			"n/no-missing-import": [
-				"error",
-				{ allowModules: ["eslint-plugin-erasable-syntax-only"] },
-			],
-			"n/no-unpublished-import": "off",
-		},
+		rules: { "n/no-missing-import": "off" },
 	},
 	{
 		extends: [vitest.configs.recommended],
