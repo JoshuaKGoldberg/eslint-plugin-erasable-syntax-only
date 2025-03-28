@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@typescript-eslint/parser':
-        specifier: '>=8'
-        version: 8.27.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
       '@typescript-eslint/utils':
         specifier: ^8.24.0
         version: 8.27.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
