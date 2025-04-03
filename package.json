@@ -80,6 +80,7 @@
 		"vitest": "3.0.9"
 	},
 	"peerDependencies": {
+		"@typescript-eslint/parser": ">=8",
 		"eslint": ">=9",
 		"typescript": ">=5"
 	},
