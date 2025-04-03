@@ -1,7 +1,7 @@
 {
 	"name": "eslint-plugin-erasable-syntax-only",
 	"version": "0.3.0",
-	"description": "ESLint plugin to granularly enforce TypeScript's `erasableSyntaxOnly` flag. ❎",
+	"description": "ESLint plugin to granularly enforce TypeScript's erasableSyntaxOnly flag. ❎",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only.git"
@@ -80,7 +80,6 @@
 		"vitest": "3.0.9"
 	},
 	"peerDependencies": {
-		"@typescript-eslint/parser": ">=8",
 		"eslint": ">=9",
 		"typescript": ">=5"
 	},
