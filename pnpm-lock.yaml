@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@typescript-eslint/parser':
+        specifier: '>=8'
+        version: 8.27.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
       '@typescript-eslint/utils':
         specifier: ^8.24.0
         version: 8.27.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
@@ -43,8 +46,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0
       create-typescript-app:
-        specifier: 2.18.3
-        version: 2.18.3(bingo-systems@0.5.4)
+        specifier: 2.24.5
+        version: 2.24.5(bingo-systems@0.5.4)
       cspell:
         specifier: 8.17.5
         version: 8.17.5
@@ -61,8 +64,8 @@ importers:
         specifier: 50.6.8
         version: 50.6.8(eslint@9.22.0(jiti@2.4.2))
       eslint-plugin-jsonc:
-        specifier: 2.19.1
-        version: 2.19.1(eslint@9.22.0(jiti@2.4.2))
+        specifier: 2.20.0
+        version: 2.20.0(eslint@9.22.0(jiti@2.4.2))
       eslint-plugin-markdown:
         specifier: 5.1.0
         version: 5.1.0(eslint@9.22.0(jiti@2.4.2))
@@ -720,8 +723,8 @@ packages:
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
 
-  '@eslint-community/eslint-utils@4.4.1':
-    resolution: {integrity: sha512-s3O3waFUrMV8P/XaF/+ZTp1X9XBZW1a4B97ZnjQF2KYWaFD2A8KyFBsrsfSjEmjn3RGWAIuvlneuZm3CUK3jbA==}
+  '@eslint-community/eslint-utils@4.5.1':
+    resolution: {integrity: sha512-soEIOALTfTK6EjmKMMoLugwaP0rzkad90iIWd1hMO9ARkSAyjfMfkRRhLvD5qH7vvM0Cg72pieUfR6yh6XxC4w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
@@ -1511,20 +1514,20 @@ packages:
   before-after-hook@3.0.2:
     resolution: {integrity: sha512-Nik3Sc0ncrMK4UUdXQmAnRtzmNQTAAXmXIopizwZ1W1t8QmfJj+zL4OA2I7XPTPW5z5TDqv4hRo/JzouDJnX3A==}
 
-  bingo-fs@0.5.4:
-    resolution: {integrity: sha512-0dP52RdNAff6F8MoHszk7YAZKZWes4+s9UYANNZVfr87g2KbgY56o6szVXEXytRtay6UuNIkjMHcRTGWw0ODzw==}
+  bingo-fs@0.5.5:
+    resolution: {integrity: sha512-T06BMIQPuJEuDKEQRl206hRFVthMu5byyFf1ZslCRUVRdFExrZ7A5dBU5FZdeT+41nJX89/rvu8wFfNB/LY98Q==}
     engines: {node: '>=18'}
 
   bingo-requests@0.5.5:
     resolution: {integrity: sha512-NQcnlAtnR72Cfn6Y9EWPS3RXAGM+4ndE3BEueLnWOQgj+/Y6kQyhGEiB7cPmi4VeJL+Kcqo/EGyzuF23aIT3Cg==}
     engines: {node: '>=18'}
 
-  bingo-stratum@0.5.7:
-    resolution: {integrity: sha512-PznnKNYhGe5DobDVBvIMGn0mIXorSSwUBeG2NaCl5PI3prcGeD5NubzFDeq2O3WzH/l9MZ3wmz5a2nB7YiHKrA==}
+  bingo-stratum@0.5.10:
+    resolution: {integrity: sha512-Nzuh93WLHp0ngAf/oJq5iWjFdaPRgS6sUq29M4GgRdmSO3ApCeH1nWZTVuGQL5nPsYDFW8+MgWCNpQYbHmCVlQ==}
     engines: {node: '>=18'}
     peerDependencies:
-      bingo: ^0.5.9
-      bingo-fs: ^0.5.4
+      bingo: ^0.5.13
+      bingo-fs: ^0.5.5
       bingo-systems: ^0.5.4
       zod: ^3.24.2
 
@@ -1532,8 +1535,8 @@ packages:
     resolution: {integrity: sha512-DZJ/OGQtGeiw9neP6pDFXOBiuGO0vr1Nqlm70WJs3NfziozE1OeFLe8E4ol5t1sIfH8AAheM4Z/YnU2ftroWzw==}
     engines: {node: '>=18'}
 
-  bingo@0.5.10:
-    resolution: {integrity: sha512-/1v+VhuDWOcISXayuEBAyNBCD0GuN5bJq2m1/dIX8SAH1SZjH2geIb/lTqmQjBQ4XDxAAevGHrhK+L779xvBbw==}
+  bingo@0.5.14:
+    resolution: {integrity: sha512-ZoQqP5Wly2o5BNLPF7uwwBZPM7GJuRJ0t2K3m2r62yWYm2oMg8SP1wAvu2oVWjGKB5zM9fLw9M26v3NlCvwK1g==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -1822,8 +1825,8 @@ packages:
       typescript:
         optional: true
 
-  create-typescript-app@2.18.3:
-    resolution: {integrity: sha512-Z0CmFzSkSiWrkBhSB2w9IhnOfWchcuAzWftLCzZqElvPUwtd9zmmC1HRRO2mDXcPG4PWM5uVmOSdPdzWJmUyyw==}
+  create-typescript-app@2.24.5:
+    resolution: {integrity: sha512-e+g0SP0dTFI1g47tDJpZep60giZhmJUahSAiVFOOL80cJTNppmxFe1hG9BKGhTlDiMLVhwhZhqXztDPgBpyOLw==}
     engines: {node: '>=18.3.0'}
     hasBin: true
 
@@ -2122,8 +2125,8 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
 
-  eslint-plugin-jsonc@2.19.1:
-    resolution: {integrity: sha512-MmlAOaZK1+Lg7YoCZPGRjb88ZjT+ct/KTsvcsbZdBm+w8WMzGx+XEmexk0m40P1WV9G2rFV7X3klyRGRpFXEjA==}
+  eslint-plugin-jsonc@2.20.0:
+    resolution: {integrity: sha512-FRgCn9Hzk5eKboCbVMrr9QrhM0eO4G+WKH8IFXoaeqhM/2kuWzbStJn4kkr0VWL8J5H8RYZF+Aoam1vlBaZVkw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -2793,6 +2796,11 @@ packages:
 
   json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
+
+  json5@2.2.3:
+    resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
+    engines: {node: '>=6'}
+    hasBin: true
 
   jsonc-eslint-parser@2.4.0:
     resolution: {integrity: sha512-WYDyuc/uFcGp6YtM2H0uKmUwieOuzeE/5YocFJLnLfclZ4inf3mRn8ZVy1s7Hxji7Jxm6Ss8gqpexD/GlKoGgg==}
@@ -4229,8 +4237,8 @@ packages:
     resolution: {integrity: sha512-RvEsa3W/NCqEBMtnoE09GRVelA3IqRcKaijEiM6CEGsD19qLurf0HjrYMHwOqImOszlLL0ja63DPJeeU4pm7oQ==}
     engines: {node: '>=20'}
 
-  zod-tsconfig@0.1.2:
-    resolution: {integrity: sha512-/+w7rFkGoNetAFJ3gEELq8FWgXmt9fHow/2GhqFdyE3nXjVskqiGT8LUFGLhODgIhifeqnoiL0yLNrZj3SdxZQ==}
+  zod-tsconfig@0.2.0:
+    resolution: {integrity: sha512-ug/zndWh/wNiejtCJ2tGyNzi3Nf94ZnpFos/e5CGTIXYIwoXMiXYg3a3SptYVrfXFnLCpuTTfVjYWh6q9djKhA==}
     engines: {node: '>=18.3.0'}
 
   zod-validation-error@3.4.0:
@@ -4690,7 +4698,7 @@ snapshots:
       eslint: 9.22.0(jiti@2.4.2)
       ignore: 5.3.2
 
-  '@eslint-community/eslint-utils@4.4.1(eslint@9.22.0(jiti@2.4.2))':
+  '@eslint-community/eslint-utils@4.5.1(eslint@9.22.0(jiti@2.4.2))':
     dependencies:
       eslint: 9.22.0(jiti@2.4.2)
       eslint-visitor-keys: 3.4.3
@@ -5327,7 +5335,7 @@ snapshots:
 
   '@typescript-eslint/utils@8.27.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@9.22.0(jiti@2.4.2))
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.22.0(jiti@2.4.2))
       '@typescript-eslint/scope-manager': 8.27.0
       '@typescript-eslint/types': 8.27.0
       '@typescript-eslint/typescript-estree': 8.27.0(typescript@5.8.2)
@@ -5503,17 +5511,17 @@ snapshots:
 
   before-after-hook@3.0.2: {}
 
-  bingo-fs@0.5.4: {}
+  bingo-fs@0.5.5: {}
 
   bingo-requests@0.5.5:
     dependencies:
       '@octokit/types': 13.8.0
 
-  bingo-stratum@0.5.7(bingo-fs@0.5.4)(bingo-systems@0.5.4)(bingo@0.5.10)(zod@3.24.2):
+  bingo-stratum@0.5.10(bingo-fs@0.5.5)(bingo-systems@0.5.4)(bingo@0.5.14)(zod@3.24.2):
     dependencies:
       all-properties-lazy: 0.1.0
-      bingo: 0.5.10
-      bingo-fs: 0.5.4
+      bingo: 0.5.14
+      bingo-fs: 0.5.5
       bingo-systems: 0.5.4
       cached-factory: 0.1.0
       chalk: 5.4.1
@@ -5525,16 +5533,16 @@ snapshots:
 
   bingo-systems@0.5.4:
     dependencies:
-      bingo-fs: 0.5.4
+      bingo-fs: 0.5.5
       execa: 9.5.2
       get-github-auth-token: 0.1.1
       octokit: 4.1.2
 
-  bingo@0.5.10:
+  bingo@0.5.14:
     dependencies:
       '@clack/prompts': 0.10.0
       all-properties-lazy: 0.1.0
-      bingo-fs: 0.5.4
+      bingo-fs: 0.5.5
       bingo-requests: 0.5.5
       bingo-systems: 0.5.4
       cached-factory: 0.1.0
@@ -5840,11 +5848,11 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.2
 
-  create-typescript-app@2.18.3(bingo-systems@0.5.4):
+  create-typescript-app@2.24.5(bingo-systems@0.5.4):
     dependencies:
-      bingo: 0.5.10
-      bingo-fs: 0.5.4
-      bingo-stratum: 0.5.7(bingo-fs@0.5.4)(bingo-systems@0.5.4)(bingo@0.5.10)(zod@3.24.2)
+      bingo: 0.5.14
+      bingo-fs: 0.5.5
+      bingo-stratum: 0.5.10(bingo-fs@0.5.5)(bingo-systems@0.5.4)(bingo@0.5.14)(zod@3.24.2)
       cached-factory: 0.1.0
       cspell-populate-words: 0.3.0
       execa: 9.5.2
@@ -5852,10 +5860,11 @@ snapshots:
       github-default-labels: 0.1.0
       html-to-text: 9.0.5
       image-size: 1.2.0
-      input-from-file: 0.5.4(bingo@0.5.10)
-      input-from-file-json: 0.5.4(bingo@0.5.10)(zod@3.24.2)
-      input-from-script: 0.5.4(bingo@0.5.10)
+      input-from-file: 0.5.4(bingo@0.5.14)
+      input-from-file-json: 0.5.4(bingo@0.5.14)(zod@3.24.2)
+      input-from-script: 0.5.4(bingo@0.5.14)
       js-yaml: 4.1.0
+      json5: 2.2.3
       lazy-value: 3.0.0
       lodash: 4.17.21
       npm-user: 6.1.1
@@ -5872,7 +5881,7 @@ snapshots:
       trash-cli: 6.0.0
       zod: 3.24.2
       zod-package-json: 1.1.0
-      zod-tsconfig: 0.1.2
+      zod-tsconfig: 0.2.0
     transitivePeerDependencies:
       - bingo-systems
 
@@ -6229,14 +6238,14 @@ snapshots:
 
   eslint-plugin-es-x@7.8.0(eslint@9.22.0(jiti@2.4.2)):
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@9.22.0(jiti@2.4.2))
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.22.0(jiti@2.4.2))
       '@eslint-community/regexpp': 4.12.1
       eslint: 9.22.0(jiti@2.4.2)
       eslint-compat-utils: 0.5.1(eslint@9.22.0(jiti@2.4.2))
 
   eslint-plugin-eslint-plugin@6.4.0(eslint@9.22.0(jiti@2.4.2)):
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@9.22.0(jiti@2.4.2))
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.22.0(jiti@2.4.2))
       eslint: 9.22.0(jiti@2.4.2)
       estraverse: 5.3.0
 
@@ -6257,13 +6266,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-jsonc@2.19.1(eslint@9.22.0(jiti@2.4.2)):
+  eslint-plugin-jsonc@2.20.0(eslint@9.22.0(jiti@2.4.2)):
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@9.22.0(jiti@2.4.2))
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.22.0(jiti@2.4.2))
       eslint: 9.22.0(jiti@2.4.2)
       eslint-compat-utils: 0.6.4(eslint@9.22.0(jiti@2.4.2))
       eslint-json-compat-utils: 0.2.1(eslint@9.22.0(jiti@2.4.2))(jsonc-eslint-parser@2.4.0)
-      espree: 9.6.1
+      espree: 10.3.0
       graphemer: 1.4.0
       jsonc-eslint-parser: 2.4.0
       natural-compare: 1.4.0
@@ -6280,7 +6289,7 @@ snapshots:
 
   eslint-plugin-n@17.16.2(eslint@9.22.0(jiti@2.4.2)):
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@9.22.0(jiti@2.4.2))
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.22.0(jiti@2.4.2))
       enhanced-resolve: 5.18.1
       eslint: 9.22.0(jiti@2.4.2)
       eslint-plugin-es-x: 7.8.0(eslint@9.22.0(jiti@2.4.2))
@@ -6318,7 +6327,7 @@ snapshots:
 
   eslint-plugin-regexp@2.7.0(eslint@9.22.0(jiti@2.4.2)):
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@9.22.0(jiti@2.4.2))
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.22.0(jiti@2.4.2))
       '@eslint-community/regexpp': 4.12.1
       comment-parser: 1.4.1
       eslint: 9.22.0(jiti@2.4.2)
@@ -6349,7 +6358,7 @@ snapshots:
 
   eslint@9.22.0(jiti@2.4.2):
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.1(eslint@9.22.0(jiti@2.4.2))
+      '@eslint-community/eslint-utils': 4.5.1(eslint@9.22.0(jiti@2.4.2))
       '@eslint-community/regexpp': 4.12.1
       '@eslint/config-array': 0.19.2
       '@eslint/config-helpers': 0.1.0
@@ -6778,20 +6787,20 @@ snapshots:
 
   ini@4.1.3: {}
 
-  input-from-file-json@0.5.4(bingo@0.5.10)(zod@3.24.2):
+  input-from-file-json@0.5.4(bingo@0.5.14)(zod@3.24.2):
     dependencies:
-      bingo: 0.5.10
-      input-from-file: 0.5.4(bingo@0.5.10)
+      bingo: 0.5.14
+      input-from-file: 0.5.4(bingo@0.5.14)
       zod: 3.24.2
 
-  input-from-file@0.5.4(bingo@0.5.10):
+  input-from-file@0.5.4(bingo@0.5.14):
     dependencies:
-      bingo: 0.5.10
+      bingo: 0.5.14
       zod: 3.24.2
 
-  input-from-script@0.5.4(bingo@0.5.10):
+  input-from-script@0.5.4(bingo@0.5.14):
     dependencies:
-      bingo: 0.5.10
+      bingo: 0.5.14
       zod: 3.24.2
 
   inquirer@12.3.0(@types/node@22.13.10):
@@ -6972,6 +6981,8 @@ snapshots:
   json-schema@0.4.0: {}
 
   json-stable-stringify-without-jsonify@1.0.1: {}
+
+  json5@2.2.3: {}
 
   jsonc-eslint-parser@2.4.0:
     dependencies:
@@ -8567,7 +8578,7 @@ snapshots:
     dependencies:
       zod: 3.24.2
 
-  zod-tsconfig@0.1.2:
+  zod-tsconfig@0.2.0:
     dependencies:
       zod: 3.24.2
 

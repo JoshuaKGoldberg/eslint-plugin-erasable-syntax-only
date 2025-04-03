@@ -7,21 +7,13 @@
 // Eventually these values should be inferable, making this config file unnecessary:
 //   https://github.com/JoshuaKGoldberg/bingo/issues/128
 import {
-	blockCodecov,
-	blockCTATransitions,
 	blockESLint,
-	blockVitest,
 	createConfig,
-} from "create-typescript-app";
+} from "../create-typescript-app/lib/index.js";
 
 export default createConfig({
 	refinements: {
 		addons: [
-			blockCodecov({
-				env: {
-					CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}",
-				},
-			}),
 			blockESLint({
 				rules: [
 					{
@@ -31,14 +23,6 @@ export default createConfig({
 					},
 				],
 			}),
-			blockVitest({
-				coverage: {
-					exclude: ["src/index.ts", "src/rules/index.ts"],
-				},
-			}),
 		],
-		blocks: {
-			add: [blockCTATransitions],
-		},
 	},
 });

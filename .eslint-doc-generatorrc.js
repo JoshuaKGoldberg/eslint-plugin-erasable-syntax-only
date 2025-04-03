@@ -1,4 +1,4 @@
-const prettier = require("prettier");
+import prettier from "prettier";
 
 /** @type {import('eslint-doc-generator').GenerateOptions} */
 const config = {
@@ -10,4 +10,4 @@ const config = {
 	ruleDocTitleFormat: "prefix-name",
 };
 
-module.exports = config;
+export default config;
