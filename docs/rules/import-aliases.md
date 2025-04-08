@@ -1,4 +1,4 @@
-# erasable-syntax-only/import-aliases
+# import-aliases
 
 💡 This rule is manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).
 

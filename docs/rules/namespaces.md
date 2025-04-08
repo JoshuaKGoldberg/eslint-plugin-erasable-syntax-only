@@ -1,4 +1,4 @@
-# erasable-syntax-only/namespaces
+# namespaces
 
 <!-- end auto-generated rule header -->
 

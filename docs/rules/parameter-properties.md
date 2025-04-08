@@ -1,4 +1,4 @@
-# erasable-syntax-only/parameter-properties
+# parameter-properties
 
 <!-- end auto-generated rule header -->
 

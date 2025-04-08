@@ -1,4 +1,4 @@
-# erasable-syntax-only/enums
+# enums
 
 <!-- end auto-generated rule header -->
 
