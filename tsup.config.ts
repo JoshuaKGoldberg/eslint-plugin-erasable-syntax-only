@@ -4,7 +4,13 @@ export default defineConfig({
 	bundle: false,
 	clean: true,
 	dts: true,
-	entry: ["src/**/*.ts", "src/**/*.ts", "src/**/*.ts", "!src/**/*.test.*"],
+	entry: [
+		"src/**/*.ts",
+		"src/**/*.ts",
+		"src/**/*.ts",
+		"src/**/*.ts",
+		"!src/**/*.test.*",
+	],
 	format: "esm",
 	outDir: "lib",
 });
