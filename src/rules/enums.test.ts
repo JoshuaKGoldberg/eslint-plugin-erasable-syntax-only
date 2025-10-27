@@ -105,6 +105,36 @@ export type Values = typeof Values[keyof typeof Values]`,
 				},
 			],
 		},
+		{
+			code: `export enum Values {
+  null,
+  undefined,
+  NaN,
+  A
+}`,
+			errors: [
+				{
+					column: 8,
+					endColumn: 2,
+					endLine: 6,
+					line: 1,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `export const Values = {
+  null: 0,
+  undefined: 1,
+  NaN: 2,
+  A: 3
+} as const
+
+export type Values = typeof Values[keyof typeof Values]`,
+						},
+					],
+				},
+			],
+		},
 	],
 	valid: [`const Values = {};`, `const Values = {} as const;`],
 });

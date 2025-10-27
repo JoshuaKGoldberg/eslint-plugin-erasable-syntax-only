@@ -4,13 +4,12 @@ import { createRule } from "../utils.js";
 
 export const rule = createRule({
 	create(context) {
-		const sourceCode = context.sourceCode;
 		return {
 			TSEnumDeclaration(node) {
 				const name = node.id.name;
 				const isExported =
 					node.parent.type === AST_NODE_TYPES.ExportNamedDeclaration;
-				const EOL = sourceCode.text.includes("\r\n") ? "\r\n" : "\n";
+				let canSuggestion = true;
 				const body: { content: string; range: [number, number] }[] = [];
 
 				let previousMemberNumericValue = -1;
@@ -20,7 +19,8 @@ export const rule = createRule({
 						(enumMember.id.type !== AST_NODE_TYPES.Literal ||
 							typeof enumMember.id.value !== "string")
 					) {
-						return;
+						canSuggestion = false;
+						break;
 					}
 					const propertyName =
 						enumMember.id.type === AST_NODE_TYPES.Identifier
@@ -32,7 +32,8 @@ export const rule = createRule({
 							: previousMemberNumericValue + 1;
 
 					if (value === null) {
-						return;
+						canSuggestion = false;
+						break;
 					}
 
 					body.push({
@@ -47,28 +48,30 @@ export const rule = createRule({
 				context.report({
 					messageId: "enum",
 					node,
-					suggest: [
-						{
-							fix(fixer) {
-								return [
-									fixer.replaceTextRange(
-										[node.range[0], node.range[0] + 4],
-										"const",
-									),
-									fixer.insertTextBefore(node.body, "= "),
-									...body.map(({ content, range }) =>
-										fixer.replaceTextRange(range, content),
-									),
-									fixer.insertTextAfter(node.body, " as const"),
-									fixer.insertTextAfter(
-										node.parent.parent ?? node.parent,
-										`${EOL}${EOL}${isExported ? "export " : ""}type ${name} = typeof ${name}[keyof typeof ${name}]`,
-									),
-								];
-							},
-							messageId: "enumFix",
-						},
-					],
+					suggest: canSuggestion
+						? [
+								{
+									fix(fixer) {
+										return [
+											fixer.replaceTextRange(
+												[node.range[0], node.range[0] + 4],
+												"const",
+											),
+											fixer.insertTextBefore(node.body, "= "),
+											...body.map(({ content, range }) =>
+												fixer.replaceTextRange(range, content),
+											),
+											fixer.insertTextAfter(node.body, " as const"),
+											fixer.insertTextAfter(
+												node.parent.parent ?? node.parent,
+												`\n\n${isExported ? "export " : ""}type ${name} = typeof ${name}[keyof typeof ${name}]`,
+											),
+										];
+									},
+									messageId: "enumFix",
+								},
+							]
+						: null,
 				});
 			},
 		};
