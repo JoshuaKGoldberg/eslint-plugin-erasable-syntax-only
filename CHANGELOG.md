@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.4.0](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.3.1...0.4.0) (2025-11-03)
+
+### Features
+
+- add suggestion to enum rule ([#234](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/234)) ([a608ed6](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commit/a608ed6d84bb195e009ebed2792648a12258322f)), closes [#8](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/8)
+
 ## [0.3.1](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.3.0...0.3.1) (2025-04-03)
 
 ### Bug Fixes
