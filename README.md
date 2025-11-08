@@ -103,7 +103,8 @@ export default tseslint.config(
 );
 ```
 
-> 💡 Tip: Put a _TODO_ comment linking to a tracking issue/ticket on any temporary disables of rules.
+> [!TIP]
+> Put a _TODO_ comment linking to a tracking issue/ticket on any temporary disables of rules.
 > It will help keep track of pending work and indicate when rule disables aren't meant to stay long-term.
 
 ### See Also
