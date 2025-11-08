@@ -29,9 +29,9 @@ npm i eslint-plugin-erasable-syntax-only -D
 ```ts
 import eslint from "@eslint/js";
 import erasableSyntaxOnly from "eslint-plugin-erasable-syntax-only";
-import tseslint from "typescript-eslint";
+import { defineConfig } from "eslint/config";
 
-export default tseslint.config(
+export default defineConfig(
 	eslint.configs.recommended,
 	tseslint.configs.recommended,
 	erasableSyntaxOnly.configs.recommended, // 👈
@@ -87,9 +87,9 @@ For example, this config avoids banning enums in specific files:
 
 ```ts
 import erasableSyntaxOnly from "eslint-plugin-erasable-syntax-only";
-import tseslint from "typescript-eslint";
+import { defineConfig } from "eslint/config";
 
-export default tseslint.config(
+export default defineConfig(
 	eslint.configs.recommended,
 	tseslint.configs.recommended,
 	erasableSyntaxOnly.configs.recommended,
