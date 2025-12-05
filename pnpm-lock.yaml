@@ -58,8 +58,8 @@ importers:
         specifier: 2.3.0
         version: 2.3.0(eslint@9.39.1(jiti@2.4.2))(prettier@3.7.0)(typescript@5.9.2)
       eslint-plugin-eslint-plugin:
-        specifier: 6.5.0
-        version: 6.5.0(eslint@9.39.1(jiti@2.4.2))
+        specifier: 7.2.0
+        version: 7.2.0(eslint@9.39.1(jiti@2.4.2))
       eslint-plugin-jsdoc:
         specifier: 61.4.0
         version: 61.4.0(eslint@9.39.1(jiti@2.4.2))
@@ -2182,11 +2182,11 @@ packages:
     peerDependencies:
       eslint: '>=8'
 
-  eslint-plugin-eslint-plugin@6.5.0:
-    resolution: {integrity: sha512-DT8YpcXDtMBcBZN39JlkHGurHKU8eYFLavTrnowQLeNwqe/diRUsllsftgD/7dZ2/ItabNLLF2/EYapE1H+G7Q==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+  eslint-plugin-eslint-plugin@7.2.0:
+    resolution: {integrity: sha512-3WOuoauBlxCItqpIdyajCOVQbCmAlqHNQq82QunpzuGkBNr6OqHRjdPZKpy2Z0rGb005mIO0HEP9aaDCzkApxQ==}
+    engines: {node: ^20.19.0 || ^22.13.1 || >=24.0.0}
     peerDependencies:
-      eslint: '>=8.23.0'
+      eslint: '>=9.0.0'
 
   eslint-plugin-jsdoc@61.4.0:
     resolution: {integrity: sha512-Gbe6Z1QENj6jr5PVnEkWwm0PcVCGFwl9ju+e0BxFuRHHv6c8q2L+PRfCwDBO+veEEEGi5XO52nmoIRvhxb1A3Q==}
@@ -6401,7 +6401,7 @@ snapshots:
       eslint: 9.39.1(jiti@2.4.2)
       eslint-compat-utils: 0.5.1(eslint@9.39.1(jiti@2.4.2))
 
-  eslint-plugin-eslint-plugin@6.5.0(eslint@9.39.1(jiti@2.4.2)):
+  eslint-plugin-eslint-plugin@7.2.0(eslint@9.39.1(jiti@2.4.2)):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.0(eslint@9.39.1(jiti@2.4.2))
       eslint: 9.39.1(jiti@2.4.2)
