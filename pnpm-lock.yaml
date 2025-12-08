@@ -55,8 +55,8 @@ importers:
         specifier: 9.39.1
         version: 9.39.1(jiti@2.4.2)
       eslint-doc-generator:
-        specifier: 2.3.0
-        version: 2.3.0(eslint@9.39.1(jiti@2.4.2))(prettier@3.7.0)(typescript@5.9.2)
+        specifier: 2.4.0
+        version: 2.4.0(eslint@9.39.1(jiti@2.4.2))(prettier@3.7.0)(typescript@5.9.2)
       eslint-plugin-eslint-plugin:
         specifier: 6.5.0
         version: 6.5.0(eslint@9.39.1(jiti@2.4.2))
@@ -2147,13 +2147,16 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  eslint-doc-generator@2.3.0:
-    resolution: {integrity: sha512-R0wSCG4ImHRwVgxekm9y38mE27QYXiB3X7jD09MxbLMhV2BlxfPsO4igvCe+i6274DuiinbFyNGo+lKWMw/rqw==}
+  eslint-doc-generator@2.4.0:
+    resolution: {integrity: sha512-BPOGNzEsxyZkrqDlLXa4R1CtYOdlpehDK9x6BGaFuCwKBKrCZ9DFhhtj+wKRNZYHduRT5sup7jajk1jcrH8akw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
       eslint: '>= 8.57.1'
       prettier: '>= 3.0.0'
+    peerDependenciesMeta:
+      prettier:
+        optional: true
 
   eslint-fix-utils@0.4.0:
     resolution: {integrity: sha512-nCEciwqByGxsKiWqZjqK7xfL+7dUX9Pi0UL3J0tOwfxVN9e6Y59UxEt1ZYsc3XH0ce6T1WQM/QU2DbKK/6IG7g==}
@@ -6365,7 +6368,7 @@ snapshots:
       eslint: 9.39.1(jiti@2.4.2)
       semver: 7.7.3
 
-  eslint-doc-generator@2.3.0(eslint@9.39.1(jiti@2.4.2))(prettier@3.7.0)(typescript@5.9.2):
+  eslint-doc-generator@2.4.0(eslint@9.39.1(jiti@2.4.2))(prettier@3.7.0)(typescript@5.9.2):
     dependencies:
       '@typescript-eslint/utils': 8.41.0(eslint@9.39.1(jiti@2.4.2))(typescript@5.9.2)
       ajv: 8.17.1
@@ -6380,8 +6383,9 @@ snapshots:
       json-schema: 0.4.0
       json-schema-traverse: 1.0.0
       markdown-table: 3.0.4
-      prettier: 3.7.0
       type-fest: 4.34.1
+    optionalDependencies:
+      prettier: 3.7.0
     transitivePeerDependencies:
       - supports-color
       - typescript
