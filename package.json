@@ -84,7 +84,7 @@
 		"eslint": ">=9",
 		"typescript": ">=5"
 	},
-	"packageManager": "pnpm@10.24.0",
+	"packageManager": "pnpm@10.25.0",
 	"engines": {
 		"node": ">=20.18.0"
 	},
