@@ -52,7 +52,8 @@ export const rule = createRule({
 						? [
 								{
 									fix(fixer) {
-										return [
+										const typeName = `${name}Type`;
+										const fixes = [
 											fixer.replaceTextRange(
 												[node.range[0], node.range[0] + 4],
 												"const",
@@ -63,10 +64,33 @@ export const rule = createRule({
 											),
 											fixer.insertTextAfter(node.body, " as const"),
 											fixer.insertTextAfter(
-												node.parent.parent ?? node.parent,
-												`\n\n${isExported ? "export " : ""}type ${name} = typeof ${name}[keyof typeof ${name}]`,
+												node,
+												`
+
+${isExported ? "export " : ""}type ${typeName} = typeof ${name}[keyof typeof ${name}]`,
 											),
 										];
+
+										const variable =
+											context.sourceCode.getDeclaredVariables(node)[0];
+										if (variable) {
+											for (const ref of variable.references) {
+												if (ref.identifier === node.id) {
+													continue;
+												}
+
+												if (
+													ref.identifier.parent?.type ===
+													AST_NODE_TYPES.TSTypeReference
+												) {
+													fixes.push(
+														fixer.replaceText(ref.identifier, typeName),
+													);
+												}
+											}
+										}
+
+										return fixes;
 									},
 									messageId: "enumFix",
 								},
