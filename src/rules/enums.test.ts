@@ -17,7 +17,7 @@ ruleTester.run("enums", rule, {
 							messageId: "enumFix",
 							output: `const Values = {} as const
 
-type Values = typeof Values[keyof typeof Values]`,
+type ValuesType = typeof Values[keyof typeof Values]`,
 						},
 					],
 				},
@@ -43,7 +43,7 @@ type Values = typeof Values[keyof typeof Values]`,
   Stringy: ''
 } as const
 
-type Values = typeof Values[keyof typeof Values]`,
+type ValuesType = typeof Values[keyof typeof Values]`,
 						},
 					],
 				},
@@ -75,7 +75,7 @@ type Values = typeof Values[keyof typeof Values]`,
   Numbers: 11
 } as const
 
-type Values = typeof Values[keyof typeof Values]`,
+type ValuesType = typeof Values[keyof typeof Values]`,
 						},
 					],
 				},
@@ -97,9 +97,9 @@ type Values = typeof Values[keyof typeof Values]`,
 							messageId: "enumFix",
 							output: `/* a */ /* b */ export /* c */ /* d */ const /* e */ /* f */ Values /* g */ /* h */ = { /* i */ /* j */
   /* k */ /* l */ A: 0 /* m */ /* n */
-/* o */ /* p */ } as const /* q */ /* r */
+/* o */ /* p */ } as const
 
-export type Values = typeof Values[keyof typeof Values]`,
+export type ValuesType = typeof Values[keyof typeof Values] /* q */ /* r */`,
 						},
 					],
 				},
@@ -129,7 +129,7 @@ export type Values = typeof Values[keyof typeof Values]`,
   A: 3
 } as const
 
-export type Values = typeof Values[keyof typeof Values]`,
+export type ValuesType = typeof Values[keyof typeof Values]`,
 						},
 					],
 				},
@@ -137,4 +137,38 @@ export type Values = typeof Values[keyof typeof Values]`,
 		},
 	],
 	valid: [`const Values = {};`, `const Values = {} as const;`],
+});
+
+ruleTester.run("enums-refs", rule, {
+	invalid: [
+		{
+			code: `
+enum Values {
+	A,
+}
+
+const a: Values = Values.A;
+			`,
+			errors: [
+				{
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `
+const Values = {
+	A: 0,
+} as const
+
+type ValuesType = typeof Values[keyof typeof Values]
+
+const a: ValuesType = Values.A;
+			`,
+						},
+					],
+				},
+			],
+		},
+	],
+	valid: [],
 });
