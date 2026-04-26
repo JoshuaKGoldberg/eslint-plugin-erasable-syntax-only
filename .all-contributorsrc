@@ -58,11 +58,11 @@
   ],
   "contributorsPerLine": 7,
   "contributorsSortAlphabetically": true,
-  "files": ["README.md"],
+  "files": [
+    "README.md"
+  ],
   "projectName": "eslint-plugin-erasable-syntax-only",
   "projectOwner": "JoshuaKGoldberg",
   "repoType": "github",
   "commitConvention": "angular"
 }
-
-
