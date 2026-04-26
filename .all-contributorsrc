@@ -1,5 +1,6 @@
 {
   "badgeTemplate": "\t<a href=\"#contributors\" target=\"_blank\"><img alt=\"👪 All Contributors: <%= contributors.length %>\" src=\"https://img.shields.io/badge/%F0%9F%91%AA_all_contributors-<%= contributors.length %>-21bb42.svg\" /></a>",
+  "commitType": "docs",
   "contributors": [
     {
       "login": "JoshuaKGoldberg",
@@ -46,14 +47,13 @@
       ]
     }
   ],
+  "contributorsPerLine": 7,
   "contributorsSortAlphabetically": true,
-  "projectName": "eslint-plugin-erasable-syntax-only",
-  "projectOwner": "JoshuaKGoldberg",
-  "repoType": "github",
-  "commitConvention": "angular",
   "files": [
     "README.md"
   ],
-  "commitType": "docs",
-  "contributorsPerLine": 7
+  "projectName": "eslint-plugin-erasable-syntax-only",
+  "projectOwner": "JoshuaKGoldberg",
+  "repoType": "github",
+  "commitConvention": "angular"
 }

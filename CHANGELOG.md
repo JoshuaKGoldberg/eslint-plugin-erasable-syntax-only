@@ -1,6 +1,6 @@
 # Changelog
 
-# [0.4.0](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.3.1...0.4.0) (2025-11-03)
+## [0.4.0](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.3.1...0.4.0) (2025-11-03)
 
 ### Features
 
@@ -12,7 +12,7 @@
 
 - empty commit to trigger CI ([1dd7379](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commit/1dd7379ad7ae66d1f49ed7b189b7ae21455334ca))
 
-# [0.3.0](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.2.1...0.3.0) (2025-03-03)
+## [0.3.0](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.2.1...0.3.0) (2025-03-03)
 
 ### Features
 
@@ -24,13 +24,13 @@
 
 - **namespaces:** only report when there is value emit ([#27](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/27)) ([e82fea5](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commit/e82fea56232e52fe5d09dfd8b0d43b92b7f2b777)), closes [#22](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/22)
 
-# [0.2.0](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.1.0...0.2.0) (2025-02-16)
+## [0.2.0](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.1.0...0.2.0) (2025-02-16)
 
 ### Features
 
 - add suggestion to switch import aliases to ESM import ([#12](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/12)) ([3814c67](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commit/3814c67e928acf936150521a44d9ee26a63a7dc1)), closes [#009](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/009)
 
-# 0.1.0 (2025-02-15)
+## 0.1.0 (2025-02-15)
 
 ### Features
 

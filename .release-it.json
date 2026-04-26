@@ -4,11 +4,11 @@
 		"requireCommits": true
 	},
 	"github": { "release": true, "releaseName": "v${version}" },
-	"npm": { "publishArgs": ["--access public", "--provenance"] },
+	"npm": { "skipChecks": true },
 	"plugins": {
 		"@release-it/conventional-changelog": {
 			"infile": "CHANGELOG.md",
-			"preset": "angular",
+			"preset": "conventionalcommits",
 			"types": [
 				{ "section": "Features", "type": "feat" },
 				{ "section": "Bug Fixes", "type": "fix" },
