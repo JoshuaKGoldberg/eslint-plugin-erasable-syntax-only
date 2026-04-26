@@ -1,5 +1,7 @@
 # namespaces
 
+📝 Avoid using TypeScript's namespaces.
+
 <!-- end auto-generated rule header -->
 
 Enforces that code doesn't use TypeScript's `namespaces` with values:
