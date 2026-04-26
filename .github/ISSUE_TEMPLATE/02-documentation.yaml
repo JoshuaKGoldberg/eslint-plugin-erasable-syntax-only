@@ -1,24 +1,16 @@
 body:
   - attributes:
       description: If any of these required steps are not taken, we may not be able to review your issue. Help us to help you!
-      label: Bug Report Checklist
+      label: Documentation Report Checklist
       options:
-        - label: I have tried restarting my IDE and the issue persists.
-          required: true
-        - label: I have pulled the latest `main` branch of the repository.
+        - label: I have looked at the latest `main` branch of the repository.
           required: true
         - label: I have [searched for related issues](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues?q=is%3Aissue) and found none that matched my issue.
           required: true
     type: checkboxes
   - attributes:
-      description: What did you expect to happen?
-      label: Expected
-    type: textarea
-    validations:
-      required: true
-  - attributes:
-      description: What happened instead?
-      label: Actual
+      description: What would you like to report?
+      label: Overview
     type: textarea
     validations:
       required: true
@@ -27,11 +19,11 @@ body:
       label: Additional Info
     type: textarea
 
-description: Report a bug trying to run the code
+description: Report a typo or missing area of documentation
 
 labels:
-  - "type: bug"
+  - "area: documentation"
 
-name: 🐛 Bug
+name: 📝 Documentation
 
-title: "🐛 Bug: <short description of the bug>"
+title: "📝 Documentation: <short description of the request>"

@@ -16,6 +16,8 @@ export const rule = createRule({
 				for (const enumMember of node.body.members) {
 					if (
 						enumMember.id.type !== AST_NODE_TYPES.Identifier &&
+						// TODO: Investigate this, can we remove it?
+						// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 						(enumMember.id.type !== AST_NODE_TYPES.Literal ||
 							typeof enumMember.id.value !== "string")
 					) {

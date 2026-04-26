@@ -1,5 +1,7 @@
 # parameter-properties
 
+📝 Avoid using TypeScript's class parameter properties.
+
 <!-- end auto-generated rule header -->
 
 Enforces that code doesn't use TypeScript's class parameter properties:
