@@ -45,6 +45,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "choppel",
+      "name": "choppel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14126324?v=4",
+      "profile": "https://github.com/Choppel",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
