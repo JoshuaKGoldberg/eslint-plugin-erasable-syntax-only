@@ -104,7 +104,6 @@ export default defineConfig(
 		// TODO: Enable these!
 		rules: {
 			"package-json/require-exports": "off",
-			"package-json/require-sideEffects": "off",
 			"package-json/specify-peers-locally": "off",
 		},
 	},

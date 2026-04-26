@@ -11,6 +11,7 @@
 		"name": "Josh Goldberg ✨",
 		"email": "npm@joshuakgoldberg.com"
 	},
+	"sideEffects": false,
 	"type": "module",
 	"main": "lib/index.js",
 	"files": [
