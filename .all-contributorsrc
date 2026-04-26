@@ -45,6 +45,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "fabiendehopre",
+      "name": "Fabien Dehopré",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97023?v=4",
+      "profile": "https://dehopre.dev",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
