@@ -1,15 +1,17 @@
 body:
   - attributes:
       description: If any of these required steps are not taken, we may not be able to review your issue. Help us to help you!
-      label: Documentation Report Checklist
+      label: Tooling Report Checklist
       options:
-        - label: I have pulled the latest `main` branch of the repository.
+        - label: I have tried restarting my IDE and the issue persists.
+          required: true
+        - label: I have pulled in the newest version of the project.
           required: true
         - label: I have [searched for related issues](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues?q=is%3Aissue) and found none that matched my issue.
           required: true
     type: checkboxes
   - attributes:
-      description: What would you like to report?
+      description: What did you expect to be able to do?
       label: Overview
     type: textarea
     validations:
@@ -19,11 +21,11 @@ body:
       label: Additional Info
     type: textarea
 
-description: Report a typo or missing area of documentation
+description: Report a bug or request an enhancement in repository tooling
 
 labels:
-  - "area: documentation"
+  - "area: tooling"
 
-name: 📝 Documentation
+name: 🛠 Tooling
 
-title: "📝 Documentation: <short description of the request>"
+title: "🛠 Tooling: <short description of the change>"

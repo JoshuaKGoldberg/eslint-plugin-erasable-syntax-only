@@ -27,6 +27,4 @@ const recommended = {
 	),
 };
 
-export { rules };
-
-export default plugin;
+export { plugin as default, rules };

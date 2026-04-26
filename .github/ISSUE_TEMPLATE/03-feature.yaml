@@ -1,11 +1,9 @@
 body:
   - attributes:
       description: If any of these required steps are not taken, we may not be able to review your issue. Help us to help you!
-      label: Tooling Report Checklist
+      label: Feature Request Checklist
       options:
-        - label: I have tried restarting my IDE and the issue persists.
-          required: true
-        - label: I have pulled the latest `main` branch of the repository.
+        - label: I have looked at the latest version of the project.
           required: true
         - label: I have [searched for related issues](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues?q=is%3Aissue) and found none that matched my issue.
           required: true
@@ -21,11 +19,11 @@ body:
       label: Additional Info
     type: textarea
 
-description: Report a bug or request an enhancement in repository tooling
+description: Request that a new feature be added or an existing feature improved
 
 labels:
-  - "area: tooling"
+  - "type: feature"
 
-name: 🛠 Tooling
+name: 🚀 Feature
 
-title: "🛠 Tooling: <short description of the change>"
+title: "🚀 Feature: <short description of the feature>"
