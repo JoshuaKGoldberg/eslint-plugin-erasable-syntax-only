@@ -29,7 +29,7 @@ importers:
         version: 8.0.1
       '@release-it/conventional-changelog':
         specifier: 11.0.0
-        version: 11.0.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)(release-it@20.1.0(@types/node@25.9.0)(magicast@0.5.3))
+        version: 11.0.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)(release-it@20.2.0(@types/node@25.9.0)(magicast@0.5.3))
       '@types/node':
         specifier: 25.9.0
         version: 25.9.0
@@ -106,8 +106,8 @@ importers:
         specifier: 0.18.1
         version: 0.18.1(prettier@3.8.3)
       release-it:
-        specifier: 20.1.0
-        version: 20.1.0(@types/node@25.9.0)(magicast@0.5.3)
+        specifier: 20.2.0
+        version: 20.2.0(@types/node@25.9.0)(magicast@0.5.3)
       tsdown:
         specifier: 0.22.0
         version: 0.22.0(oxc-resolver@11.20.0)(typescript@6.0.3)
@@ -3548,8 +3548,8 @@ packages:
     resolution: {integrity: sha512-sZuz1dYW/ZsfG17WSAG7eS85r5a0dDsvg+7BiiYR5o6lKCAtUrEwdmRmaGF6rwVj3LcmAeYkOWKEPlbPzN3Y3A==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
-  release-it@20.1.0:
-    resolution: {integrity: sha512-H04eGSaRAoySkWyQWfbCqhT3j8jqPuQux7acGMkgxvpM9u0zknXRq3X5Vq4GsHAylY2aCH29FwkS1G/QrcLjbQ==}
+  release-it@20.2.0:
+    resolution: {integrity: sha512-9ZTk9ripgctC6VTqH+P54KuboK29A5mG/I3tFfS5hnoAnkwtFFAMHRidYz93ylrW995vF50Ny1aOGJiyRmEN7w==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24.0.0}
     hasBin: true
 
@@ -5180,7 +5180,7 @@ snapshots:
     dependencies:
       quansync: 1.0.0
 
-  '@release-it/conventional-changelog@11.0.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)(release-it@20.1.0(@types/node@25.9.0)(magicast@0.5.3))':
+  '@release-it/conventional-changelog@11.0.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)(release-it@20.2.0(@types/node@25.9.0)(magicast@0.5.3))':
     dependencies:
       '@conventional-changelog/git-client': 2.7.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)
       concat-stream: 2.0.0
@@ -5188,7 +5188,7 @@ snapshots:
       conventional-changelog-angular: 8.3.1
       conventional-changelog-conventionalcommits: 9.3.1
       conventional-recommended-bump: 11.2.0
-      release-it: 20.1.0(@types/node@25.9.0)(magicast@0.5.3)
+      release-it: 20.2.0(@types/node@25.9.0)(magicast@0.5.3)
       semver: 7.8.1
     transitivePeerDependencies:
       - conventional-commits-filter
@@ -7913,7 +7913,7 @@ snapshots:
       '@eslint-community/regexpp': 4.12.2
       refa: 0.12.1
 
-  release-it@20.1.0(@types/node@25.9.0)(magicast@0.5.3):
+  release-it@20.2.0(@types/node@25.9.0)(magicast@0.5.3):
     dependencies:
       '@inquirer/prompts': 8.4.2(@types/node@25.9.0)
       '@octokit/rest': 22.0.1
