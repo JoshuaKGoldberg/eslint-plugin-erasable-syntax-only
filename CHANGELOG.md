@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.2](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.4.1...0.4.2) (2026-06-18)
+
+### Bug Fixes
+
+- **deps:** update dependency cached-factory to ^0.3.0 ([#347](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/347)) ([e8dd182](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commit/e8dd1822ee599a0d2d82c4629dc743b080be1fd9))
+
 ## [0.4.1](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.4.0...0.4.1) (2026-04-26)
 
 ### Bug Fixes
