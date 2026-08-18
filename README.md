@@ -51,7 +51,7 @@ These are all set to `"error"` in the recommended config:
 | [enums](docs/rules/enums.md)                               | Avoid using TypeScript's enums.                      | 💡  |
 | [import-aliases](docs/rules/import-aliases.md)             | Avoid using TypeScript's import aliases.             | 💡  |
 | [namespaces](docs/rules/namespaces.md)                     | Avoid using TypeScript's namespaces.                 |     |
-| [parameter-properties](docs/rules/parameter-properties.md) | Avoid using TypeScript's class parameter properties. |     |
+| [parameter-properties](docs/rules/parameter-properties.md) | Avoid using TypeScript's class parameter properties. | 💡  |
 
 <!-- end auto-generated rules list -->
 
