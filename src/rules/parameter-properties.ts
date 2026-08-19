@@ -3,17 +3,15 @@ import { AST_NODE_TYPES, TSESLint, TSESTree } from "@typescript-eslint/utils";
 import { createRule } from "../utils.js";
 
 function getFirstConstructor(method: TSESTree.MethodDefinition) {
-	return (
-		method.parent.body.find(
-			(member) =>
-				member.type === AST_NODE_TYPES.MethodDefinition &&
-				member.kind === "constructor",
-		) ?? method
-	);
+	return method.parent.body.find(
+		(member) =>
+			member.type === AST_NODE_TYPES.MethodDefinition &&
+			member.kind === "constructor",
+	) as TSESTree.MethodDefinition;
 }
 
 function getLineIndentation(line: string) {
-	return /^\s*/.exec(line)?.[0] ?? "";
+	return line.slice(0, line.length - line.trimStart().length);
 }
 
 function getPropertyName(node: TSESTree.TSParameterProperty) {
