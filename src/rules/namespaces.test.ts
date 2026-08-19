@@ -475,6 +475,390 @@ ruleTester.run("namespaces", rule, {
 				},
 			],
 		},
+		{
+			code: `
+				namespace Values {
+					export const value = 'a';
+				}
+				
+				console.log(Values.value);
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 4,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				const Values = {
+					value: 'a',
+				};
+				
+				console.log(Values.value);
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				export namespace Values {
+					export const value = 'a';
+				}
+				
+				console.log(Values.value);
+			`,
+			errors: [
+				{
+					column: 12,
+					endColumn: 6,
+					endLine: 4,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				export const Values = {
+					value: 'a',
+				};
+				
+				console.log(Values.value);
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				const value = 'outer';
+				namespace Values {
+					export const value = 'inner';
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 5,
+					line: 3,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				const value = 'outer';
+				const Values = {
+					value: 'inner',
+				};
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					export let value = 'a';
+				}
+				
+				Values.value = 'b';
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 4,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				const Values = {
+					value: 'a',
+				};
+				
+				Values.value = 'b';
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					export const a = 'a'
+					export const b = 'b'
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 5,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceRemoveFix",
+							output: `
+				
+					const a = 'a'
+					const b = 'b'
+				
+			`,
+						},
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				const Values = {
+					a: 'a',
+					b: 'b',
+				};
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					// Leading.
+					export const a = 'a'; // Trailing.
+					/* Block. */
+					export const b = 'b';
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 7,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceRemoveFix",
+							output: `
+				
+					// Leading.
+					const a = 'a'; // Trailing.
+					/* Block. */
+					const b = 'b';
+				
+			`,
+						},
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				const Values = {
+					// Leading.
+					a: 'a', // Trailing.
+					/* Block. */
+					b: 'b',
+				};
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				function make() {
+					namespace Values {
+						export const value = 'a';
+					}
+				}
+			`,
+			errors: [
+				{
+					column: 6,
+					endColumn: 7,
+					endLine: 5,
+					line: 3,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceRemoveFix",
+							output: `
+				function make() {
+					
+						const value = 'a';
+					
+				}
+			`,
+						},
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				function make() {
+					const Values = {
+						value: 'a',
+					};
+				}
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					export const value: readonly string[] = [];
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 4,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceRemoveFix",
+							output: `
+				
+					const value: readonly string[] = [];
+				
+			`,
+						},
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				const Values = {
+					value: [],
+				};
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					export const run = async () => {};
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 4,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceRemoveFix",
+							output: `
+				
+					const run = async () => {};
+				
+			`,
+						},
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				const Values = {
+					run: async () => {},
+				};
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					export const a = 'a';
+				}
+				namespace Values {
+					export const b = 'b';
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 4,
+					line: 2,
+					messageId: "namespace",
+				},
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 7,
+					line: 5,
+					messageId: "namespace",
+				},
+			],
+		},
+		{
+			code: `
+				function Values() {}
+				namespace Values {
+					export const value = 'a';
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 5,
+					line: 3,
+					messageId: "namespace",
+				},
+			],
+		},
+		{
+			code: `
+				interface Values {
+					a: string;
+				}
+				namespace Values {
+					export const value = 'a';
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 7,
+					line: 5,
+					messageId: "namespace",
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					export const { value } = source;
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 4,
+					line: 2,
+					messageId: "namespace",
+				},
+			],
+		},
 	],
 	valid: [
 		`const Values = {};`,
