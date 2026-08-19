@@ -2,6 +2,16 @@ import { AST_NODE_TYPES, TSESLint, TSESTree } from "@typescript-eslint/utils";
 
 import { createRule } from "../utils.js";
 
+function getFirstConstructor(method: TSESTree.MethodDefinition) {
+	return (
+		method.parent.body.find(
+			(member) =>
+				member.type === AST_NODE_TYPES.MethodDefinition &&
+				member.kind === "constructor",
+		) ?? method
+	);
+}
+
 function getLineIndentation(line: string) {
 	return /^\s*/.exec(line)?.[0] ?? "";
 }
@@ -48,22 +58,26 @@ export const rule = createRule({
 				return undefined;
 			}
 
+			// Overload signatures must stay adjacent to their implementation.
+			const target = getFirstConstructor(method);
 			const modifiers = context.sourceCode
 				.getText()
 				.slice(node.range[0], node.parameter.range[0]);
-			const property = `${modifiers}${context.sourceCode.getText(name)};\n${getIndentation(method)}`;
+			const property = `${modifiers}${context.sourceCode.getText(name)};\n${getIndentation(target)}`;
 			const assignment = `\n${getInnerIndentation(method)}this.${name.name} = ${name.name};`;
+			const isBodyEmpty =
+				!body.body.length && !context.sourceCode.getCommentsInside(body).length;
 
 			return [
 				{
 					fix: (fixer: TSESLint.RuleFixer) => [
-						fixer.insertTextBefore(method, property),
+						fixer.insertTextBefore(target, property),
 						fixer.removeRange([node.range[0], node.parameter.range[0]]),
 						superCall
 							? fixer.insertTextAfter(superCall, assignment)
 							: fixer.insertTextAfterRange(
 									[body.range[0], body.range[0] + 1],
-									`${assignment}${body.body.length ? "" : `\n${getIndentation(method)}`}`,
+									`${assignment}${isBodyEmpty ? `\n${getIndentation(method)}` : ""}`,
 								),
 					],
 					messageId: "parameterPropertyFix" as const,
@@ -71,9 +85,9 @@ export const rule = createRule({
 			];
 		}
 
-		function getIndentation(method: TSESTree.MethodDefinition) {
+		function getIndentation(member: TSESTree.Node) {
 			return getLineIndentation(
-				context.sourceCode.lines[method.loc.start.line - 1],
+				context.sourceCode.lines[member.loc.start.line - 1],
 			);
 		}
 
