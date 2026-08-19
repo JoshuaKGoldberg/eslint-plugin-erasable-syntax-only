@@ -26,6 +26,7 @@ interface ConvertibleStatementBase {
 	declarationRange: TSESTree.Range;
 	isReferenced: boolean;
 	lastToken: TSESTree.Token;
+	names: string[];
 	statement: TSESTree.ExportNamedDeclaration;
 }
 
@@ -124,11 +125,11 @@ export const rule = createRule({
 				return undefined;
 			}
 
-			const isReferenced = context.sourceCode
-				.getDeclaredVariables(declaration)
-				.some((variable) =>
-					variable.references.some((reference) => !reference.init),
-				);
+			const variables = context.sourceCode.getDeclaredVariables(declaration);
+			const isReferenced = variables.some((variable) =>
+				variable.references.some((reference) => !reference.init),
+			);
+			const names = variables.map((variable) => variable.name);
 
 			switch (declaration.type) {
 				case AST_NODE_TYPES.FunctionDeclaration: {
@@ -140,6 +141,7 @@ export const rule = createRule({
 								functionRange,
 								isReferenced,
 								lastToken,
+								names,
 								statement,
 								type: "function",
 							}
@@ -166,6 +168,7 @@ export const rule = createRule({
 						declarators,
 						isReferenced,
 						lastToken,
+						names,
 						statement,
 						type: "variable",
 					};
@@ -208,6 +211,21 @@ export const rule = createRule({
 				);
 		}
 
+		function canRemove(
+			node: TSESTree.TSModuleDeclaration,
+			statements: ConvertibleStatement[],
+		) {
+			const variable = context.sourceCode.getDeclaredVariables(node).at(0);
+
+			return (
+				!!variable &&
+				!variable.references.length &&
+				!statements.some((statement) =>
+					statement.names.some((name) => variable.scope.set.has(name)),
+				)
+			);
+		}
+
 		function createSuggestions(
 			node: TSESTree.TSModuleDeclaration,
 		): TSESLint.SuggestionReportDescriptor<MessageId>[] | undefined {
@@ -219,8 +237,10 @@ export const rule = createRule({
 
 			const { body, id, statements } = convertible;
 
-			const suggestions: TSESLint.SuggestionReportDescriptor<MessageId>[] = [
-				{
+			const suggestions: TSESLint.SuggestionReportDescriptor<MessageId>[] = [];
+
+			if (canRemove(node, statements)) {
+				suggestions.push({
 					*fix(fixer) {
 						const target = skipExportParent(node);
 
@@ -237,8 +257,8 @@ export const rule = createRule({
 						}
 					},
 					messageId: "namespaceRemoveFix",
-				},
-			];
+				});
+			}
 
 			// Members referenced by other members would no longer be in scope as
 			// properties of an object, so only namespaces without them can convert.
@@ -263,7 +283,7 @@ export const rule = createRule({
 				});
 			}
 
-			return suggestions;
+			return suggestions.length ? suggestions : undefined;
 		}
 
 		function* createPropertyFixes(
