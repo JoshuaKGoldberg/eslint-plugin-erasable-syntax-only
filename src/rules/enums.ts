@@ -12,8 +12,6 @@ export const rule = createRule({
 				(token) => token.value === "enum",
 			);
 
-			// Ambient enums can't be given an initializer, so they can't be
-			// switched to an object literal.
 			if (node.declare || !enumToken) {
 				return undefined;
 			}
