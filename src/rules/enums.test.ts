@@ -135,6 +135,122 @@ export type Values = typeof Values[keyof typeof Values]`,
 				},
 			],
 		},
+		{
+			code: `const enum Values {
+  A
+}`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 3,
+					line: 1,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `const Values = {
+  A: 0
+} as const
+
+type Values = typeof Values[keyof typeof Values]`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `export const enum Mode {
+  build = 'build',
+  debug = 'debug'
+}`,
+			errors: [
+				{
+					column: 8,
+					endColumn: 2,
+					endLine: 4,
+					line: 1,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `export const Mode = {
+  build: 'build',
+  debug: 'debug'
+} as const
+
+export type Mode = typeof Mode[keyof typeof Mode]`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `/* a */ export /* b */ const /* c */ enum /* d */ Values {
+  A
+}`,
+			errors: [
+				{
+					column: 24,
+					endColumn: 2,
+					endLine: 3,
+					line: 1,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `/* a */ export /* b */ const /* d */ Values = {
+  A: 0
+} as const
+
+export type Values = typeof Values[keyof typeof Values]`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `declare enum Values {
+  A
+}`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 3,
+					line: 1,
+					messageId: "enum",
+				},
+			],
+		},
+		{
+			code: `declare const enum Values {
+  A
+}`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 3,
+					line: 1,
+					messageId: "enum",
+				},
+			],
+		},
+		{
+			code: `export declare const enum Values {
+  A
+}`,
+			errors: [
+				{
+					column: 8,
+					endColumn: 2,
+					endLine: 3,
+					line: 1,
+					messageId: "enum",
+				},
+			],
+		},
 	],
 	valid: [`const Values = {};`, `const Values = {} as const;`],
 });
