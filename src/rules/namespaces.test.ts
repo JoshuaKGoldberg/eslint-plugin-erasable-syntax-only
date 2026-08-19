@@ -16,6 +16,24 @@ ruleTester.run("namespaces", rule, {
 					endLine: 4,
 					line: 2,
 					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceRemoveFix",
+							output: `
+				
+					const value = 'a';
+				
+			`,
+						},
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				const Values = {
+					value: 'a',
+				};
+			`,
+						},
+					],
 				},
 			],
 		},
@@ -30,6 +48,201 @@ ruleTester.run("namespaces", rule, {
 					column: 5,
 					endColumn: 6,
 					endLine: 4,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceRemoveFix",
+							output: `
+				
+					const value = 'a';
+				
+			`,
+						},
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				const Values = {
+					value: 'a',
+				};
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				export namespace Values {
+					export const value = 'a';
+				}
+			`,
+			errors: [
+				{
+					column: 12,
+					endColumn: 6,
+					endLine: 4,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceRemoveFix",
+							output: `
+				
+					export const value = 'a';
+				
+			`,
+						},
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				export const Values = {
+					value: 'a',
+				};
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					export const value: string = 'a';
+					export let other = 'b', third = 'c';
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 5,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceRemoveFix",
+							output: `
+				
+					const value: string = 'a';
+					let other = 'b', third = 'c';
+				
+			`,
+						},
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				const Values = {
+					value: 'a',
+					other: 'b', third: 'c',
+				};
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					export function value() {}
+					export async function asynchronous() {}
+					export function* generator() {}
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 6,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceRemoveFix",
+							output: `
+				
+					function value() {}
+					async function asynchronous() {}
+					function* generator() {}
+				
+			`,
+						},
+						{
+							messageId: "namespaceObjectFix",
+							output: `
+				const Values = {
+					value() {},
+					async asynchronous() {},
+					* generator() {},
+				};
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					export const value = 'a';
+					export function getValue() {
+						return value;
+					}
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 7,
+					line: 2,
+					messageId: "namespace",
+					suggestions: [
+						{
+							messageId: "namespaceRemoveFix",
+							output: `
+				
+					const value = 'a';
+					function getValue() {
+						return value;
+					}
+				
+			`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					export const a = 'a';
+					export const b = Values.a;
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 5,
+					line: 2,
+					messageId: "namespace",
+				},
+			],
+		},
+		{
+			code: `
+				namespace Values {
+					const hidden = 'a';
+					export const value = 'b';
+				}
+			`,
+			errors: [
+				{
+					column: 5,
+					endColumn: 6,
+					endLine: 5,
 					line: 2,
 					messageId: "namespace",
 				},
