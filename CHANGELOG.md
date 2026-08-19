@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.0](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.5.1...0.6.0) (2026-08-19)
+
+### Features
+
+- add export-aliases rule for CJS-style export= assignments ([#441](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/441)) ([9ff953c](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commit/9ff953c056558c4bf94f932fa9135f58f6f97095)), closes [#24](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/24)
+
 ## [0.5.1](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.5.0...0.5.1) (2026-08-19)
 
 ### Bug Fixes
