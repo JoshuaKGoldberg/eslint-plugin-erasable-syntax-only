@@ -6,8 +6,6 @@ export const rule = createRule({
 	create(context) {
 		return {
 			TSExportAssignment(node) {
-				// `export =`s are still allowed in ambient contexts such as
-				// `declare module`s, which don't emit any JavaScript.
 				if (node.parent.type !== AST_NODE_TYPES.Program) {
 					return;
 				}
