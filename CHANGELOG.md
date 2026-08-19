@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.1](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.5.0...0.5.1) (2026-08-19)
+
+### Bug Fixes
+
+- correct enums suggestion for const and declared enums ([#442](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/442)) ([5ccf8a6](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commit/5ccf8a604719d742b52f891d4b9ecc18cb797444)), closes [#281](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/281)
+
 ## [0.5.0](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.4.2...0.5.0) (2026-08-19)
 
 ### Features
