@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.0](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.6.0...0.7.0) (2026-08-19)
+
+### Features
+
+- add suggestion to parameter-properties rule ([#440](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/440)) ([f3e0026](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commit/f3e00260f91f49a403cfcbc93d7b1161039a7dcf)), closes [#11](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/11)
+
 ## [0.6.0](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.5.1...0.6.0) (2026-08-19)
 
 ### Features
