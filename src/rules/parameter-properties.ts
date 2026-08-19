@@ -13,8 +13,6 @@ function getPropertyName(node: TSESTree.TSParameterProperty) {
 			? parameter.left
 			: parameter;
 
-	// Class properties need a type annotation: unlike parameters, they can't
-	// infer one from a default value.
 	return name.typeAnnotation ? name : undefined;
 }
 
@@ -43,7 +41,6 @@ export const rule = createRule({
 				return undefined;
 			}
 
-			// Assignments in a derived class' constructor must come after super().
 			const { superClass } = method.parent.parent;
 			const superCall = superClass ? getSuperCall(body) : undefined;
 
