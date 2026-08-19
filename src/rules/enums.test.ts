@@ -97,9 +97,9 @@ type Values = typeof Values[keyof typeof Values]`,
 							messageId: "enumFix",
 							output: `/* a */ /* b */ export /* c */ /* d */ const /* e */ /* f */ Values /* g */ /* h */ = { /* i */ /* j */
   /* k */ /* l */ A: 0 /* m */ /* n */
-/* o */ /* p */ } as const /* q */ /* r */
+/* o */ /* p */ } as const
 
-export type Values = typeof Values[keyof typeof Values]`,
+export type Values = typeof Values[keyof typeof Values] /* q */ /* r */`,
 						},
 					],
 				},
@@ -248,6 +248,326 @@ export type Values = typeof Values[keyof typeof Values]`,
 					endLine: 3,
 					line: 1,
 					messageId: "enum",
+				},
+			],
+		},
+		{
+			code: `namespace Values {
+  export enum Inner {
+    A
+  }
+}`,
+			errors: [
+				{
+					column: 10,
+					endColumn: 4,
+					endLine: 4,
+					line: 2,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `namespace Values {
+  export const Inner = {
+    A: 0
+  } as const
+
+  export type Inner = typeof Inner[keyof typeof Inner]
+}`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `namespace Values {
+  enum Inner {
+    A
+  }
+}`,
+			errors: [
+				{
+					column: 3,
+					endColumn: 4,
+					endLine: 4,
+					line: 2,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `namespace Values {
+  const Inner = {
+    A: 0
+  } as const
+
+  type Inner = typeof Inner[keyof typeof Inner]
+}`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `function make() {
+  enum Values {
+    A
+  }
+}`,
+			errors: [
+				{
+					column: 3,
+					endColumn: 4,
+					endLine: 4,
+					line: 2,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `function make() {
+  const Values = {
+    A: 0
+  } as const
+
+  type Values = typeof Values[keyof typeof Values]
+}`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `enum Values {
+  A
+}
+
+console.log(Values.A);`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 3,
+					line: 1,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `const Values = {
+  A: 0
+} as const
+
+type Values = typeof Values[keyof typeof Values]
+
+console.log(Values.A);`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `declare module 'values' {
+  export enum Values {
+    A
+  }
+}`,
+			errors: [
+				{
+					column: 10,
+					endColumn: 4,
+					endLine: 4,
+					line: 2,
+					messageId: "enum",
+				},
+			],
+		},
+		{
+			code: `declare namespace Values {
+  export enum Inner {
+    A
+  }
+}`,
+			errors: [
+				{
+					column: 10,
+					endColumn: 4,
+					endLine: 4,
+					line: 2,
+					messageId: "enum",
+				},
+			],
+		},
+		{
+			code: `enum Values {
+  Shifted = 1 << 2
+}`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 3,
+					line: 1,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `const Values = {
+  Shifted: 1 << 2
+} as const
+
+type Values = typeof Values[keyof typeof Values]`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `enum Values {
+  Concatenated = 'a' + 'b'
+}`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 3,
+					line: 1,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `const Values = {
+  Concatenated: 'a' + 'b'
+} as const
+
+type Values = typeof Values[keyof typeof Values]`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `enum Values {
+  Negative = -1
+}`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 3,
+					line: 1,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `const Values = {
+  Negative: -1
+} as const
+
+type Values = typeof Values[keyof typeof Values]`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `enum Values {
+  Templated = \`a\`
+}`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 3,
+					line: 1,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `const Values = {
+  Templated: \`a\`
+} as const
+
+type Values = typeof Values[keyof typeof Values]`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `enum Values {
+  A = 1,
+  B = A << 1
+}`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 4,
+					line: 1,
+					messageId: "enum",
+				},
+			],
+		},
+		{
+			code: `enum Values {
+  Shifted = 1 << 2,
+  Next
+}`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 4,
+					line: 1,
+					messageId: "enum",
+				},
+			],
+		},
+		{
+			code: `enum Values {
+  'a-b' = 1
+}`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 3,
+					line: 1,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `const Values = {
+  'a-b': 1
+} as const
+
+type Values = typeof Values[keyof typeof Values]`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `const OUTSIDE = 3;
+enum Values {
+  A = OUTSIDE
+}`,
+			errors: [
+				{
+					column: 1,
+					endColumn: 2,
+					endLine: 4,
+					line: 2,
+					messageId: "enum",
+					suggestions: [
+						{
+							messageId: "enumFix",
+							output: `const OUTSIDE = 3;
+const Values = {
+  A: OUTSIDE
+} as const
+
+type Values = typeof Values[keyof typeof Values]`,
+						},
+					],
 				},
 			],
 		},
