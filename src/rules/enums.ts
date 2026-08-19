@@ -1,12 +1,37 @@
-import { AST_NODE_TYPES } from "@typescript-eslint/utils";
+import { AST_NODE_TYPES, TSESTree } from "@typescript-eslint/utils";
 
 import { createRule } from "../utils.js";
 
 export const rule = createRule({
 	create(context) {
+		function getConstReplacementRange(
+			node: TSESTree.TSEnumDeclaration,
+		): TSESTree.Range | undefined {
+			const enumToken = context.sourceCode.getFirstToken(
+				node,
+				(token) => token.value === "enum",
+			);
+
+			if (node.declare || !enumToken) {
+				return undefined;
+			}
+
+			if (!node.const) {
+				return enumToken.range;
+			}
+
+			const constToken = context.sourceCode.getFirstToken(
+				node,
+				(token) => token.value === "const",
+			);
+
+			return constToken ? [constToken.range[0], enumToken.range[1]] : undefined;
+		}
+
 		return {
 			TSEnumDeclaration(node) {
 				const name = node.id.name;
+				const constReplacementRange = getConstReplacementRange(node);
 				const isExported =
 					node.parent.type === AST_NODE_TYPES.ExportNamedDeclaration;
 				let canSuggestion = true;
@@ -50,30 +75,28 @@ export const rule = createRule({
 				context.report({
 					messageId: "enum",
 					node,
-					suggest: canSuggestion
-						? [
-								{
-									fix(fixer) {
-										return [
-											fixer.replaceTextRange(
-												[node.range[0], node.range[0] + 4],
-												"const",
-											),
-											fixer.insertTextBefore(node.body, "= "),
-											...body.map(({ content, range }) =>
-												fixer.replaceTextRange(range, content),
-											),
-											fixer.insertTextAfter(node.body, " as const"),
-											fixer.insertTextAfter(
-												node.parent.parent ?? node.parent,
-												`\n\n${isExported ? "export " : ""}type ${name} = typeof ${name}[keyof typeof ${name}]`,
-											),
-										];
+					suggest:
+						canSuggestion && constReplacementRange
+							? [
+									{
+										fix(fixer) {
+											return [
+												fixer.replaceTextRange(constReplacementRange, "const"),
+												fixer.insertTextBefore(node.body, "= "),
+												...body.map(({ content, range }) =>
+													fixer.replaceTextRange(range, content),
+												),
+												fixer.insertTextAfter(node.body, " as const"),
+												fixer.insertTextAfter(
+													node.parent.parent ?? node.parent,
+													`\n\n${isExported ? "export " : ""}type ${name} = typeof ${name}[keyof typeof ${name}]`,
+												),
+											];
+										},
+										messageId: "enumFix",
 									},
-									messageId: "enumFix",
-								},
-							]
-						: null,
+								]
+							: null,
 				});
 			},
 		};
