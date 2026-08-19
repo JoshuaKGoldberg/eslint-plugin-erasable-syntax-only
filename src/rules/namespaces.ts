@@ -156,8 +156,6 @@ export const rule = createRule({
 
 						declarators.push({
 							init,
-							// Identifier ranges include any type annotation, which an
-							// object property can't have.
 							nameEnd: id.typeAnnotation?.range[0] ?? id.range[1],
 							nameStart: id.range[0],
 						});
