@@ -56,7 +56,6 @@ export const rule = createRule({
 				return undefined;
 			}
 
-			// Overload signatures must stay adjacent to their implementation.
 			const target = getFirstConstructor(method);
 			const modifiers = context.sourceCode
 				.getText()
