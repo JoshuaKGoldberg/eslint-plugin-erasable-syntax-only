@@ -10,15 +10,26 @@ export const rule = createRule({
 					return;
 				}
 
+				const equals = context.sourceCode.getTokenBefore(
+					node.expression,
+					(token) => token.value === "=",
+				);
+
 				context.report({
 					messageId: "exportAlias",
 					node,
-					suggest: [
+					suggest: equals && [
 						{
 							fix(fixer) {
+								const text = context.sourceCode.getText();
+
 								return fixer.replaceText(
-									node,
-									`export default ${context.sourceCode.getText(node.expression)};`,
+									equals,
+									[
+										/\s/.test(text[equals.range[0] - 1]) ? "" : " ",
+										"default",
+										/\s/.test(text[equals.range[1]]) ? "" : " ",
+									].join(""),
 								);
 							},
 							messageId: "exportAliasDefaultFix",
