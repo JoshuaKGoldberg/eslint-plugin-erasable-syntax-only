@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.2](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.7.0...0.7.2) (2026-09-20)
+
+### Bug Fixes
+
+- **enums:** correct suggestion values, scope, and quoted member names ([#443](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/443)) ([506a4a6](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commit/506a4a6dbf019a4847d1e11973960b0590567e9a)), closes [#281](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/281), references [#442](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/442)
+- **namespaces:** only suggest removing unreferenced, non-colliding namespaces ([#444](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/444)) ([b1932c1](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commit/b1932c1be935631d81b66839507549c3fa582ec1)), closes [#10](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/10), references [#439](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/439)
+
 ## [0.7.1](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.7.0...0.7.1) (2026-08-19)
 
 ### Bug Fixes
