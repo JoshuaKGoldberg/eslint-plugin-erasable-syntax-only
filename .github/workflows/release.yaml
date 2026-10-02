@@ -3,6 +3,9 @@ concurrency:
 
 jobs:
   release:
+    permissions:
+      contents: write
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -14,7 +17,7 @@ jobs:
       - run: pnpm build
       - env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        uses: JoshuaKGoldberg/release-it-action@2dbfaf20eccedeb69114cd573a92cf4cd893d0f2 # v0.5.0
+        uses: JoshuaKGoldberg/release-it-action@v0.5.7
 
 name: Release
 
@@ -22,7 +25,3 @@ on:
   push:
     branches:
       - main
-
-permissions:
-  contents: write
-  id-token: write
