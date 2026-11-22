@@ -1,5 +1,5 @@
-import { rule } from "./enums.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "./enums.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("enums", rule, {
 	invalid: [

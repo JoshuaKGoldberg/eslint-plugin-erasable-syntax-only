@@ -1,6 +1,6 @@
 import { AST_NODE_TYPES, TSESLint, TSESTree } from "@typescript-eslint/utils";
 
-import { createRule } from "../utils.js";
+import { createRule } from "../utils.ts";
 
 function getFirstConstructor(method: TSESTree.MethodDefinition) {
 	return method.parent.body.find(
@@ -110,7 +110,6 @@ export const rule = createRule({
 			},
 		};
 	},
-	defaultOptions: [],
 	meta: {
 		docs: {
 			description: "Avoid using TypeScript's class parameter properties.",

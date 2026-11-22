@@ -1,7 +1,7 @@
 import { AST_NODE_TYPES, TSESLint, TSESTree } from "@typescript-eslint/utils";
 import { CachedFactory } from "cached-factory";
 
-import { createRule } from "../utils.js";
+import { createRule } from "../utils.ts";
 
 interface ConvertibleDeclarator {
 	init: TSESTree.Expression;
@@ -331,7 +331,6 @@ export const rule = createRule({
 			},
 		};
 	},
-	defaultOptions: [],
 	meta: {
 		docs: {
 			description: "Avoid using TypeScript's namespaces.",

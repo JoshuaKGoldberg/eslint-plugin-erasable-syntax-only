@@ -8,7 +8,7 @@ export default defineConfig({
 			include: ["src"],
 			reporter: ["html", "lcov"],
 		},
-		exclude: ["lib", "node_modules"],
+		exclude: ["dist", "lib", "node_modules"],
 		setupFiles: ["console-fail-test/setup"],
 	},
 });

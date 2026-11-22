@@ -4,7 +4,7 @@ import {
 	TSESTree,
 } from "@typescript-eslint/utils";
 
-import { createRule } from "../utils.js";
+import { createRule } from "../utils.ts";
 
 interface EnumMemberContent {
 	content: string;
@@ -166,7 +166,6 @@ export const rule = createRule({
 			},
 		};
 	},
-	defaultOptions: [],
 	meta: {
 		docs: {
 			description: "Avoid using TypeScript's enums.",

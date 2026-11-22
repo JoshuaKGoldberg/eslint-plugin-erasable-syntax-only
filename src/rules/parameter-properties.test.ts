@@ -1,5 +1,5 @@
-import { rule } from "./parameter-properties.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "./parameter-properties.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("parameter-properties", rule, {
 	invalid: [

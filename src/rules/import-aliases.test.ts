@@ -1,5 +1,5 @@
-import { rule } from "./import-aliases.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "./import-aliases.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("import-aliases", rule, {
 	invalid: [
