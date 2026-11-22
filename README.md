@@ -56,7 +56,7 @@ These are all set to `"error"` in the recommended config:
 
 <!-- end auto-generated rules list -->
 
-> This plugin requires ESLint >=9 and Node.js >=20.18.0.
+> This plugin requires ESLint >=9 and Node.js `^20.19.0 || ^22.13.0 || >=24`.
 
 ## What?
 
