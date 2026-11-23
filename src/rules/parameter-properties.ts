@@ -33,7 +33,10 @@ function getSuperCall(body: TSESTree.BlockStatement) {
 	);
 }
 
-export const rule = createRule({
+export const rule = createRule<
+	[],
+	"parameterProperty" | "parameterPropertyFix"
+>({
 	create(context) {
 		function createSuggestions(node: TSESTree.TSParameterProperty) {
 			const { body } = node.parent;

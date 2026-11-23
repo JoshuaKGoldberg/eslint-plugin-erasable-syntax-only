@@ -49,7 +49,10 @@ function skipModuleParent(node: TSESTree.Node & { parent: object }) {
 		: node;
 }
 
-export const rule = createRule({
+export const rule = createRule<
+	[],
+	"namespace" | "namespaceObjectFix" | "namespaceRemoveFix"
+>({
 	create(context) {
 		const hasValueStatementCache = new CachedFactory(
 			(node: TSESTree.TSModuleDeclaration) =>

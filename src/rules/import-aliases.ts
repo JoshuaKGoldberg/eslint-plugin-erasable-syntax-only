@@ -2,7 +2,10 @@ import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 
 import { createRule } from "../utils.ts";
 
-export const rule = createRule({
+export const rule = createRule<
+	[],
+	"importAlias" | "importAliasDefaultFix" | "importAliasNamespaceFix"
+>({
 	create(context) {
 		return {
 			TSImportEqualsDeclaration(node) {

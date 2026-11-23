@@ -32,7 +32,7 @@ function isAmbient(node: TSESTree.TSEnumDeclaration) {
 	return false;
 }
 
-export const rule = createRule({
+export const rule = createRule<[], "enum" | "enumFix">({
 	create(context) {
 		function getConstReplacementRange(
 			node: TSESTree.TSEnumDeclaration,
