@@ -101,7 +101,9 @@ export default defineConfig(
 	{
 		extends: [packageJson.configs.recommended, packageJson.configs.stylistic],
 		files: ["package.json"],
-		// TODO: Enable this!
-		rules: { "package-json/specify-peers-locally": "off" },
+		rules: {
+			// TODO: Enable this!
+			"package-json/specify-peers-locally": "off",
+		},
 	},
 );
