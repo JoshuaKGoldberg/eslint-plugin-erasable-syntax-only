@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.3](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.7.2...0.7.3) (2026-11-24)
+
+### Bug Fixes
+
+- bump to create-typescript-app@2.87.18 ([#569](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/569)) ([c181a73](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commit/c181a7390f5fcabad572291e7eeaddfebad1af63)), closes [#568](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues/568)
+
 ## [0.7.2](https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/compare/0.7.0...0.7.2) (2026-09-20)
 
 ### Bug Fixes
