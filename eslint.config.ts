@@ -21,7 +21,6 @@ export default defineConfig(
 			".eslint-doc-generatorrc.js",
 			"coverage",
 			"dist",
-			"docs/rules/*/*.ts",
 			"node_modules",
 			"pnpm-lock.yaml",
 		],
