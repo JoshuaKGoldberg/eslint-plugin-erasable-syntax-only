@@ -5,6 +5,7 @@ import vitest from "@vitest/eslint-plugin";
 import eslintPlugin from "eslint-plugin-eslint-plugin";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
+import markdownLinks from "eslint-plugin-markdown-links";
 import n from "eslint-plugin-n";
 import packageJson from "eslint-plugin-package-json";
 import perfectionist from "eslint-plugin-perfectionist";
@@ -19,8 +20,7 @@ export default defineConfig(
 			"**/*.snap",
 			".eslint-doc-generatorrc.js",
 			"coverage",
-			"docs/rules/*/*.ts",
-			"lib",
+			"dist",
 			"node_modules",
 			"pnpm-lock.yaml",
 		],
@@ -65,7 +65,7 @@ export default defineConfig(
 		files: ["**/*.json"],
 	},
 	{
-		extends: [markdown.configs.recommended],
+		extends: [markdown.configs.recommended, markdownLinks.configs.recommended],
 		files: ["**/*.md"],
 		rules: {
 			// https://github.com/eslint/markdown/issues/294
@@ -73,25 +73,24 @@ export default defineConfig(
 		},
 	},
 	{
-		extends: [tseslint.configs.disableTypeChecked],
-		files: ["**/*.md/*.ts"],
-		rules: { "n/no-missing-import": "off" },
-	},
-	{
 		extends: [vitest.configs.recommended],
 		files: ["**/*.test.*"],
-		rules: { "@typescript-eslint/no-unsafe-assignment": "off" },
+		rules: {
+			"@typescript-eslint/no-unsafe-assignment": "off",
+			"vitest/prefer-describe-function-title": "error",
+		},
 		settings: { vitest: { typecheck: true } },
+	},
+	{
+		files: ["**/*.test.*", "eslint.config.*"],
+		rules: { "n/no-unsupported-features/node-builtins": "off" },
 	},
 	{
 		extends: [yml.configs["flat/standard"], yml.configs["flat/prettier"]],
 		files: ["**/*.{yml,yaml}"],
 		rules: {
 			"yml/file-extension": "error",
-			"yml/sort-keys": [
-				"error",
-				{ order: { type: "asc" }, pathPattern: "^.*$" },
-			],
+			"yml/sort-keys": "error",
 			"yml/sort-sequence-values": [
 				"error",
 				{ order: { type: "asc" }, pathPattern: "^.*$" },
@@ -99,11 +98,10 @@ export default defineConfig(
 		},
 	},
 	{
-		extends: [packageJson.configs.recommended],
+		extends: [packageJson.configs.recommended, packageJson.configs.stylistic],
 		files: ["package.json"],
-		// TODO: Enable these!
 		rules: {
-			"package-json/require-exports": "off",
+			// TODO: Enable this!
 			"package-json/specify-peers-locally": "off",
 		},
 	},

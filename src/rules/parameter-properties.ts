@@ -1,6 +1,6 @@
 import { AST_NODE_TYPES, TSESLint, TSESTree } from "@typescript-eslint/utils";
 
-import { createRule } from "../utils.js";
+import { createRule } from "../utils.ts";
 
 function getFirstConstructor(method: TSESTree.MethodDefinition) {
 	return method.parent.body.find(
@@ -33,7 +33,10 @@ function getSuperCall(body: TSESTree.BlockStatement) {
 	);
 }
 
-export const rule = createRule({
+export const rule = createRule<
+	[],
+	"parameterProperty" | "parameterPropertyFix"
+>({
 	create(context) {
 		function createSuggestions(node: TSESTree.TSParameterProperty) {
 			const { body } = node.parent;
@@ -110,7 +113,6 @@ export const rule = createRule({
 			},
 		};
 	},
-	defaultOptions: [],
 	meta: {
 		docs: {
 			description: "Avoid using TypeScript's class parameter properties.",

@@ -1,8 +1,8 @@
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 
-import { createRule } from "../utils.js";
+import { createRule } from "../utils.ts";
 
-export const rule = createRule({
+export const rule = createRule<[], "exportAlias" | "exportAliasDefaultFix">({
 	create(context) {
 		return {
 			TSExportAssignment(node) {
@@ -39,7 +39,6 @@ export const rule = createRule({
 			},
 		};
 	},
-	defaultOptions: [],
 	meta: {
 		docs: {
 			description: "Avoid using TypeScript's export aliases.",

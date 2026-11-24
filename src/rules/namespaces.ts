@@ -1,7 +1,7 @@
 import { AST_NODE_TYPES, TSESLint, TSESTree } from "@typescript-eslint/utils";
 import { CachedFactory } from "cached-factory";
 
-import { createRule } from "../utils.js";
+import { createRule } from "../utils.ts";
 
 interface ConvertibleDeclarator {
 	init: TSESTree.Expression;
@@ -49,7 +49,10 @@ function skipModuleParent(node: TSESTree.Node & { parent: object }) {
 		: node;
 }
 
-export const rule = createRule({
+export const rule = createRule<
+	[],
+	"namespace" | "namespaceObjectFix" | "namespaceRemoveFix"
+>({
 	create(context) {
 		const hasValueStatementCache = new CachedFactory(
 			(node: TSESTree.TSModuleDeclaration) =>
@@ -331,7 +334,6 @@ export const rule = createRule({
 			},
 		};
 	},
-	defaultOptions: [],
 	meta: {
 		docs: {
 			description: "Avoid using TypeScript's namespaces.",

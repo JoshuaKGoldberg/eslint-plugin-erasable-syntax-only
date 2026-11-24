@@ -1,5 +1,5 @@
-import { rule } from "./namespaces.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "./namespaces.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("namespaces", rule, {
 	invalid: [

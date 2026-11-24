@@ -1,6 +1,6 @@
 import Module from "node:module";
 
-import { rules } from "./rules/index.js";
+import { rules } from "./rules/index.ts";
 
 const require = Module.createRequire(import.meta.url);
 
@@ -23,7 +23,10 @@ const recommended = {
 		"erasable-syntax-only": plugin,
 	},
 	rules: Object.fromEntries(
-		Object.keys(rules).map((rule) => [`erasable-syntax-only/${rule}`, "error"]),
+		Object.keys(rules).map((rule) => [
+			`erasable-syntax-only/${rule}`,
+			"error" as const,
+		]),
 	),
 };
 

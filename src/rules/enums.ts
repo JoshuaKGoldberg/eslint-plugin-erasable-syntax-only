@@ -4,7 +4,7 @@ import {
 	TSESTree,
 } from "@typescript-eslint/utils";
 
-import { createRule } from "../utils.js";
+import { createRule } from "../utils.ts";
 
 interface EnumMemberContent {
 	content: string;
@@ -32,7 +32,7 @@ function isAmbient(node: TSESTree.TSEnumDeclaration) {
 	return false;
 }
 
-export const rule = createRule({
+export const rule = createRule<[], "enum" | "enumFix">({
 	create(context) {
 		function getConstReplacementRange(
 			node: TSESTree.TSEnumDeclaration,
@@ -166,7 +166,6 @@ export const rule = createRule({
 			},
 		};
 	},
-	defaultOptions: [],
 	meta: {
 		docs: {
 			description: "Avoid using TypeScript's enums.",

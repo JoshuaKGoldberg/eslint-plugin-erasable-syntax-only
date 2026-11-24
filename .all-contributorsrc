@@ -81,6 +81,5 @@
   ],
   "projectName": "eslint-plugin-erasable-syntax-only",
   "projectOwner": "JoshuaKGoldberg",
-  "repoType": "github",
-  "commitConvention": "angular"
+  "repoType": "github"
 }

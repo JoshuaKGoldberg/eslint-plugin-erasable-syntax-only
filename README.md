@@ -56,7 +56,7 @@ These are all set to `"error"` in the recommended config:
 
 <!-- end auto-generated rules list -->
 
-> This plugin requires ESLint >=9 and Node.js >=20.18.0.
+> This plugin requires ESLint >=9 and Node.js `^20.19.0 || ^22.13.0 || >=24`.
 
 ## What?
 
@@ -123,22 +123,20 @@ Thanks! ❎
 <!-- spellchecker: disable -->
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AlexMunoz"><img src="https://avatars.githubusercontent.com/u/3093946?v=4?s=100" width="100px;" alt="Alex Muñoz"/><br /><sub><b>Alex Muñoz</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commits?author=alexmunoz" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://dehopre.dev"><img src="https://avatars.githubusercontent.com/u/97023?v=4?s=100" width="100px;" alt="Fabien Dehopré"/><br /><sub><b>Fabien Dehopré</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues?q=author%3Afabiendehopre" title="Bug reports">🐛</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://jakebailey.dev"><img src="https://avatars.githubusercontent.com/u/5341706?v=4?s=100" width="100px;" alt="Jake Bailey"/><br /><sub><b>Jake Bailey</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues?q=author%3Ajakebailey" title="Bug reports">🐛</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://www.joshuakgoldberg.com/"><img src="https://avatars.githubusercontent.com/u/3335181?v=4?s=100" width="100px;" alt="Josh Goldberg ✨"/><br /><sub><b>Josh Goldberg ✨</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commits?author=JoshuaKGoldberg" title="Code">💻</a> <a href="#content-JoshuaKGoldberg" title="Content">🖋</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commits?author=JoshuaKGoldberg" title="Documentation">📖</a> <a href="#ideas-JoshuaKGoldberg" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-JoshuaKGoldberg" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-JoshuaKGoldberg" title="Maintenance">🚧</a> <a href="#projectManagement-JoshuaKGoldberg" title="Project Management">📆</a> <a href="#tool-JoshuaKGoldberg" title="Tools">🔧</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues?q=author%3AJoshuaKGoldberg" title="Bug reports">🐛</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Choppel"><img src="https://avatars.githubusercontent.com/u/14126324?v=4?s=100" width="100px;" alt="choppel"/><br /><sub><b>choppel</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues?q=author%3Achoppel" title="Bug reports">🐛</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/cylewaitforit"><img src="https://avatars.githubusercontent.com/u/54253392?v=4?s=100" width="100px;" alt="cylewaitforit"/><br /><sub><b>cylewaitforit</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commits?author=cylewaitforit" title="Documentation">📖</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/naremloa"><img src="https://avatars.githubusercontent.com/u/11555829?v=4?s=100" width="100px;" alt="naremloa"/><br /><sub><b>naremloa</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commits?author=naremloa" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AlexMunoz"><img src="https://avatars.githubusercontent.com/u/3093946?v=4&size=100" width="100px" height="100px" alt="Alex Muñoz"/><br /><sub><b>Alex Muñoz</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commits?author=alexmunoz" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Choppel"><img src="https://avatars.githubusercontent.com/u/14126324?v=4&size=100" width="100px" height="100px" alt="choppel"/><br /><sub><b>choppel</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues?q=author%3Achoppel" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/cylewaitforit"><img src="https://avatars.githubusercontent.com/u/54253392?v=4&size=100" width="100px" height="100px" alt="cylewaitforit"/><br /><sub><b>cylewaitforit</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commits?author=cylewaitforit" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://dehopre.dev"><img src="https://avatars.githubusercontent.com/u/97023?v=4&size=100" width="100px" height="100px" alt="Fabien Dehopré"/><br /><sub><b>Fabien Dehopré</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues?q=author%3Afabiendehopre" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://jakebailey.dev"><img src="https://avatars.githubusercontent.com/u/5341706?v=4&size=100" width="100px" height="100px" alt="Jake Bailey"/><br /><sub><b>Jake Bailey</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues?q=author%3Ajakebailey" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.joshuakgoldberg.com/"><img src="https://avatars.githubusercontent.com/u/3335181?v=4&size=100" width="100px" height="100px" alt="Josh Goldberg ✨"/><br /><sub><b>Josh Goldberg ✨</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commits?author=JoshuaKGoldberg" title="Code">💻</a> <a href="#content-JoshuaKGoldberg" title="Content">🖋</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commits?author=JoshuaKGoldberg" title="Documentation">📖</a> <a href="#ideas-JoshuaKGoldberg" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-JoshuaKGoldberg" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-JoshuaKGoldberg" title="Maintenance">🚧</a> <a href="#projectManagement-JoshuaKGoldberg" title="Project Management">📆</a> <a href="#tool-JoshuaKGoldberg" title="Tools">🔧</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/issues?q=author%3AJoshuaKGoldberg" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/naremloa"><img src="https://avatars.githubusercontent.com/u/11555829?v=4&size=100" width="100px" height="100px" alt="naremloa"/><br /><sub><b>naremloa</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/commits?author=naremloa" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
 
-<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
