@@ -34,7 +34,7 @@
 		"tsc": "tsc"
 	},
 	"dependencies": {
-		"@typescript-eslint/utils": "8.73.0",
+		"@typescript-eslint/utils": "^8.59.0",
 		"cached-factory": "^0.3.0"
 	},
 	"devDependencies": {

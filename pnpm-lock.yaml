@@ -179,7 +179,7 @@ importers:
         specifier: '>=8'
         version: 8.73.0(eslint@10.15.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
       '@typescript-eslint/utils':
-        specifier: 8.73.0
+        specifier: ^8.59.0
         version: 8.73.0(eslint@10.15.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
       cached-factory:
         specifier: ^0.3.0
